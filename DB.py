@@ -24,7 +24,7 @@ def addTable(name):
 def parsing_bd():
     conn = mysql.connector.connect(host = 'localhost', user = 'root', passwd = 'zuma057195Z!', db = 'posterposs')
     cursor = conn.cursor()
-    cursor.execute(f'SELECT * FROM summ_count WHERE Tables = {peremen} ')
+    cursor.execute(f'SELECT * FROM summ_count WHERE Tables = {peremen} ORDER BY Tables')
     a = (str(cursor.fetchall()).replace('), (', '\n')).strip('[').strip(']').strip('(').strip(')').strip(",").strip("'")
     return a
     conn.close()
@@ -45,13 +45,6 @@ def tables_summ():
     return a
     conn.close()
 
-def add_order():
-    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
-    cursor = conn.cursor()
-    cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 1)')
-    conn.commit()
-    conn.close()
-
 def clear():
     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
     cursor = conn.cursor()
@@ -59,4 +52,23 @@ def clear():
     conn.commit()
     conn.close()
 
+def Americano_add():
+    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+    cursor = conn.cursor()
+    cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 3, 1)')
+    conn.commit()
+    conn.close()
 
+def Latte_add():
+    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+    cursor = conn.cursor()
+    cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 1, 1)')
+    conn.commit()
+    conn.close()
+
+def Cappuccino_add():
+    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+    cursor = conn.cursor()
+    cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 1)')
+    conn.commit()
+    conn.close()
