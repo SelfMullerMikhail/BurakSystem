@@ -5,12 +5,15 @@ from mysql.connector import Error
 def table_1_func():
     global peremen
     peremen = 1
-    print(peremen)
 
 def table_2_func():
     global peremen
     peremen = 2
-    print(peremen)
+
+def table_3_func():
+    global peremen
+    peremen = 3
+
 
 def addTable(name):
     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
@@ -21,7 +24,7 @@ def addTable(name):
 def parsing_bd():
     conn = mysql.connector.connect(host = 'localhost', user = 'root', passwd = 'zuma057195Z!', db = 'posterposs')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM summ_count')
+    cursor.execute(f'SELECT * FROM summ_count WHERE Tables = {peremen} ')
     a = (str(cursor.fetchall()).replace('), (', '\n')).strip('[').strip(']').strip('(').strip(')').strip(",").strip("'")
     return a
     conn.close()
@@ -37,15 +40,15 @@ def menu_pars():
 def tables_summ():
     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
     cursor = conn.cursor()
-    cursor.execute(f'SELECT tables, total FROM summ_one_table WHERE tables = {peremen}')
-    a = str(cursor.fetchall()).replace("Decimal(", " ").strip("[(").strip("))]").replace(")), (", "\n")
+    cursor.execute(f'SELECT total FROM summ_one_table WHERE tables = {peremen}')
+    a = 'summ: ' + str(cursor.fetchall()).strip("[(Decimal('").strip("'),)]") + ' TL'
     return a
     conn.close()
 
 def add_order():
     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
     cursor = conn.cursor()
-    cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 3)')
+    cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 1)')
     conn.commit()
     conn.close()
 

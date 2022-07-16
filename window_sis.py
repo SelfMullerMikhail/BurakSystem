@@ -1,41 +1,66 @@
-from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
-from kivy.core.window import Window
+import tkinter as tk
+from function_1 import *
 
-from DBUtils.DBHelper import DBHelper
-from Widgets.listWidget import listWidget
-from Widgets.tableWidget import tableWidget
-app=None;
-dbHelper = DBHelper()
-Window.maximize()
-class AppWithKivy(App):
-    def on_addorder(self,widget,selected):
-        if self.selectedTable is not None:
-            self.order_list.add_order(selected.dataObj)
+# Functions
+def upgrade():
+    window_enter.delete('1.0', tk.END)
+    bg = parsing_bd()
+    show_summ()
+    window_enter.insert('1.0', bg)
+    # sums = tables_summ()
 
-    def on_select_table(self,widget,selected):
-        self.selectedTable=selected
-        self.order_list.set_table(selected)
+def show_menu():
+    window_enter.delete('1.0', tk.END)
+    men = menu_pars()
+    window_enter.insert('1.0', men)
 
-    def build(self):
-        self.title="Burak's App"
-        self.width=1000
-        self.selectedTable=None
-        self.root = GridLayout(cols=3,orientation='lr-tb',spacing=0)
-        self.all_drinks=dbHelper.get_all_drinks()
-        self.drinks_widget = listWidget(self.all_drinks,False,size_hint_x=None, width=700)
-        self.drinks_widget.bind(on_addorder=self.on_addorder)
-        
-        self.tables_widget = listWidget(dbHelper.get_all_tables(),True,size_hint_x=None, width=700)
-        self.tables_widget.bind(on_addorder=self.on_select_table)
+def show_summ():
+    window_summ.delete(1, tk.END)
+    sums = tables_summ()
+    window_summ.insert(1, sums)
+
+def clear_tabl():
+    clear()
+    upgrade()
+
+def switch_table_1():
+    table_1_func()
+    upgrade()
+
+def switch_table_2():
+    table_2_func()
+    upgrade()
+
+def switch_table_3():
+    table_3_func()
+    upgrade()
 
 
-        self.order_list=tableWidget(self.all_drinks)
+window = tk.Tk()
+window.columnconfigure(1, minsize=1000)
+window.rowconfigure([0, 1], minsize=350)
 
-        self.root.add_widget(self.drinks_widget)
-        self.root.add_widget(self.order_list)
-        self.root.add_widget(self.tables_widget)
-        return self.root
-    
-if __name__=='__main__':
-    AppWithKivy().run();
+########## Button
+
+clear_but = tk.Button(text = 'clear', width = 15, height = 3, command = clear_tabl)
+clear_but.place(x = 390, y = 415)
+
+table_1 = tk.Button(text = 'table_1', width = 15, height = 3, command = switch_table_1)
+table_1.place(x = 10, y = 25)
+
+table_2 = tk.Button(text = 'table_2', width = 15, height = 3, command = switch_table_2)
+table_2.place(x = 140, y = 25)
+
+table_3 = tk.Button(text = 'table_3', width = 15, height = 3, command = switch_table_3)
+table_3.place(x = 270, y = 25)
+
+label2 = tk.Label(text="BurakSystem")
+label2.grid(row=0, column=1, sticky = "n")
+
+window_enter = tk.Text(width = 45)
+window_enter.place(x = 20, y = 90)
+
+window_summ = tk.Entry()
+window_summ.place(x = 260, y = 480)
+
+window.mainloop()
