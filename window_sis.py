@@ -1,5 +1,5 @@
 import tkinter as tk
-from function_1 import *
+from DB import *
 
 # Functions
 def upgrade():
@@ -36,6 +36,7 @@ def switch_table_3():
     upgrade()
 
 
+
 window = tk.Tk()
 window.columnconfigure(1, minsize=1000)
 window.rowconfigure([0, 1], minsize=350)
@@ -54,8 +55,34 @@ table_2.place(x = 140, y = 25)
 table_3 = tk.Button(text = 'table_3', width = 15, height = 3, command = switch_table_3)
 table_3.place(x = 270, y = 25)
 
-label2 = tk.Label(text="BurakSystem")
-label2.grid(row=0, column=1, sticky = "n")
+def americano_f():
+    Americano_add()
+    upgrade()
+americano = tk.Button(text = 'Americano', width = 15, height = 3, command = americano_f)
+americano.place(x = 550, y = 90)
+
+def latte_f():
+    Latte_add()
+    upgrade()
+latte = tk.Button(text = 'Latte', width = 15, height = 3, command = latte_f)
+latte.place(x = 680, y = 90)
+
+def cuppuccino_f():
+    Cappuccino_add()
+    upgrade()
+cappuccino = tk.Button(text = 'Cappuccino', width = 15, height = 3, command = cuppuccino_f)
+cappuccino.place(x = 810, y = 90)
+
+
+
+
+
+
+
+
+
+label = tk.Label(text="BurakSystem")
+label.grid(row=0, column=1, sticky = "n")
 
 window_enter = tk.Text(width = 45)
 window_enter.place(x = 20, y = 90)
