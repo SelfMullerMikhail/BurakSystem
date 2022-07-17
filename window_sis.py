@@ -54,36 +54,39 @@ table_2.place(x = 140, y = 25)
 table_3 = tk.Button(text = 'table_3', width = 15, height = 3, command = switch_table_3)
 table_3.place(x = 270, y = 25)
 
-a = got_menu()
-b = got_count_menu()
-line = (b[0]//3) + 1
-print(line)
-counter = 1
-
-y=30
-for i in range(line):
-    x = 550
-    y += 60
-    for i in range(3):
-        conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
-        cursor = conn.cursor()
-        cursor.execute(f'SELECT name FROM menu WHERE id = {counter}')
-        menu = cursor.fetchone()
-        counter += 1
-        menu = str(menu)
-        if menu == "None":
-            conn.close()
-            break
-        i = tk.Button(text=f'{menu}', width=15, height=3, command=Americano_add)
-        i.place(x=x, y=y)
-        x += 130
-        conn.close()
-
-
-
-
-
-
+################################## Create buttons menu
+# functions = []
+# got_hight_menu = got_count_menu()
+# line = (got_hight_menu[0]//3) + 1
+# counter = 1
+# y=30
+# for i in range(line):
+#     x = 550
+#     y += 60
+#     for i in range(3):
+#         conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+#         cursor = conn.cursor()
+#         cursor.execute(f'SELECT name FROM menu WHERE id = {counter}')
+#         menu = cursor.fetchone()
+#         counter += 1
+#         menu = str(menu)
+#         if menu == "None":
+#             conn.close()
+#             break
+#         i = tk.Button(text=f'{menu}', width=15, height=3, command=menu)
+#         i.place(x=x, y=y)
+#         x += 130
+#         conn.close()
+#         def drink_add():
+#             conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+#             cursor = conn.cursor()
+#             cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 3, 1)')
+#             conn.commit()
+#             conn.close()
+#         def menu():
+#             upgrade()
+#             drink_add()
+#         functions.append(menu)
 
 #  Lable
 label = tk.Label(text="BurakSystem")

@@ -86,15 +86,6 @@ def Cappuccino_add():
 #         self.cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 1)')
 #         self.conn.commit()
 #         self.conn.close()
-#
-
-def got_menu():
-    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
-    cursor = conn.cursor()
-    cursor.execute('SELECT name FROM menu')
-    menu = cursor.fetchone()
-    return  menu
-    conn.close()
 
 def got_count_menu():
     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
@@ -103,12 +94,3 @@ def got_count_menu():
     count_menu = cursor.fetchone()
     return count_menu
     conn.close()
-
-
-
-
-    #
-    #
-    # def espresso_d():
-    #     espresso_add()
-    #     upgrade()
