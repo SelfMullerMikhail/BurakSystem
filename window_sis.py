@@ -7,7 +7,6 @@ def upgrade():
     bg = parsing_bd()
     show_summ()
     window_enter.insert('1.0', bg)
-    # sums = tables_summ()
 
 def show_menu():
     window_enter.delete('1.0', tk.END)
@@ -55,38 +54,44 @@ table_2.place(x = 140, y = 25)
 table_3 = tk.Button(text = 'table_3', width = 15, height = 3, command = switch_table_3)
 table_3.place(x = 270, y = 25)
 
-def americano_f():
-    Americano_add()
-    upgrade()
-americano = tk.Button(text = 'Americano', width = 15, height = 3, command = americano_f)
-americano.place(x = 550, y = 90)
+a = got_menu()
+b = got_count_menu()
+line = (b[0]//3) + 1
+print(line)
+counter = 1
 
-def latte_f():
-    Latte_add()
-    upgrade()
-latte = tk.Button(text = 'Latte', width = 15, height = 3, command = latte_f)
-latte.place(x = 680, y = 90)
+y=30
+for i in range(line):
+    x = 550
+    y += 60
+    for i in range(3):
+        conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+        cursor = conn.cursor()
+        cursor.execute(f'SELECT name FROM menu WHERE id = {counter}')
+        menu = cursor.fetchone()
+        counter += 1
+        menu = str(menu)
+        if menu == "None":
+            conn.close()
+            break
+        i = tk.Button(text=f'{menu}', width=15, height=3, command=Americano_add)
+        i.place(x=x, y=y)
+        x += 130
+        conn.close()
 
-def cuppuccino_f():
-    Cappuccino_add()
-    upgrade()
-cappuccino = tk.Button(text = 'Cappuccino', width = 15, height = 3, command = cuppuccino_f)
-cappuccino.place(x = 810, y = 90)
 
 
 
 
 
 
-
-
-
+#  Lable
 label = tk.Label(text="BurakSystem")
 label.grid(row=0, column=1, sticky = "n")
-
+# main window
 window_enter = tk.Text(width = 45)
 window_enter.place(x = 20, y = 90)
-
+# summ_window
 window_summ = tk.Entry()
 window_summ.place(x = 260, y = 480)
 

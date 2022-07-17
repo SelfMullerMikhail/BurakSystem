@@ -1,3 +1,5 @@
+import tkinter as tk
+
 import mysql.connector
 from mysql.connector import Error
 #from window_sis import upgrade
@@ -72,3 +74,41 @@ def Cappuccino_add():
     cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 1)')
     conn.commit()
     conn.close()
+
+
+# table_3 = tk.Button(text = 'table_3', width = 15, height = 3, command = switch_table_3)
+# table_3.place(x = 270, y = 25)
+
+# class add_drinks():
+#     def __init__(self, peremen):
+#         self.conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+#         self.cursor = conn.cursor()
+#         self.cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES ({peremen}, 2, 1)')
+#         self.conn.commit()
+#         self.conn.close()
+#
+
+def got_menu():
+    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+    cursor = conn.cursor()
+    cursor.execute('SELECT name FROM menu')
+    menu = cursor.fetchone()
+    return  menu
+    conn.close()
+
+def got_count_menu():
+    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+    cursor = conn.cursor()
+    cursor.execute('SELECT max(id) FROM menu')
+    count_menu = cursor.fetchone()
+    return count_menu
+    conn.close()
+
+
+
+
+    #
+    #
+    # def espresso_d():
+    #     espresso_add()
+    #     upgrade()
