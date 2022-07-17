@@ -2,7 +2,6 @@ import tkinter as tk
 from DB import *
 
 class Window(tk.Tk):
-    peremen = 0
     def __init__(self):
         super().__init__()
         self.Table_1 = tk.Button(self, text="Table_1",
@@ -36,6 +35,56 @@ class Window(tk.Tk):
         self.bg = parsing_bd()
         self.show_summ()
         window_enter.insert('1.0', self.bg)
+
+class menu_botton(tk.Button):
+    def __init__(self):
+        super().__init__()
+        conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+        cursor = conn.cursor()
+        cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 1, 1)')
+        # self.upgrade()
+        conn.commit()
+        conn.close()
+    # def upgrade(self):
+    #     window_enter.delete('1.0', tk.END)
+    #     self.bg = parsing_bd()
+    #     self.show_summ()
+    #     window_enter.insert('1.0', self.bg)
+#
+# got_hight_menu = got_count_menu()
+# line = (got_hight_menu[0]//3) + 1
+# counter = 1
+# y=30
+# for i in range(line):
+#     x = 550
+#     y += 60
+#     for i in range(3):
+#         i = menu_botton()
+#         i.place(y = y, x = x)
+#         counter += 1
+
+
+        # menu = cursor.fetchone()
+        # counter += 1
+        # menu = str(menu)
+        # if menu == "None":
+        #     conn.close()
+        #     break
+        # i.place(x=x, y=y)
+        # x += 130
+        # conn.close()
+        # def drink_add():
+        #     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+        #     cursor = conn.cursor()
+        #     cursor.execute(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 3, 1)')
+        #     conn.commit()
+        #     conn.close()
+        # def menu():
+        #     upgrade()
+        #     drink_add()
+        # functions.append(menu)
+
+
 
 
 
