@@ -9,8 +9,6 @@ from kivy.uix.scrollview import ScrollView
 class drinksWidget(ScrollView):
     def __init__(self, drinks,**kwargs):
         super().__init__(**kwargs)
-        if kwargs.width is not None:
-            self.size = (kwargs.width,300)
         self.build()
         self.refresh_drinks(drinks)
 
@@ -22,3 +20,6 @@ class drinksWidget(ScrollView):
         self.drinks_container.clear_widgets()
         for drink in drinks:
             self.drinks_container.add_widget(Button(text=drink[1],size_hint=(1,None), on_press=lambda x: self.add_order(x)))
+
+    def add_order(self,button):
+        print(button)
