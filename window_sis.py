@@ -9,10 +9,13 @@ app=None;
 dbHelper = DBHelper()
 class AppWithKivy(App):
     def build(self):
-        self.root = GridLayout(cols=3,orientation='tb-lr')
-        self.drinks_widget = drinksWidget(dbHelper.get_all_drinks())
-        self.root.add_widget(self.drinks_widget,index=1)
-        self.root.add_widget(tableWidget(),index=1)
+        self.title="Burak's App"
+        self.root = GridLayout(cols=3,orientation='tb-lr',spacing=10)
+        self.drinks_widget = drinksWidget(dbHelper.get_all_drinks(),size_hint_x=None, width=700)
+        self.tables_widget = drinksWidget(dbHelper.get_all_tables(),size_hint_x=None, width=500)
+        self.root.add_widget(self.drinks_widget)
+        self.root.add_widget(self.tables_widget)
+        self.root.add_widget(tableWidget())
         return self.root
     
     def add_order(self,button):

@@ -47,4 +47,7 @@ class DBHelper:
   '''Public methods'''
   def get_all_drinks(self):
     return self.__execute_query("SELECT * FROM drinks")
+  
+  def get_all_tables(self):
+    return self.__execute_query("SELECT * FROM Tables")
 
