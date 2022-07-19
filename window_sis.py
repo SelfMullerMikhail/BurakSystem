@@ -8,10 +8,10 @@ def upgrade():
     show_summ()
     window_enter.insert('1.0', bg)
 
-def show_menu():
-    window_enter.delete('1.0', tk.END)
-    men = menu_pars()
-    window_enter.insert('1.0', men)
+# def show_menu():
+#     window_enter.delete('1.0', tk.END)
+#     men = menu_pars()
+#     window_enter.insert('1.0', men)
 
 def show_summ():
     window_summ.delete(1, tk.END)
