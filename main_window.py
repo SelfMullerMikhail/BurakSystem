@@ -7,9 +7,11 @@ from create_menu_botton import create_menu_botton
 class Window(tk.Tk):
     helper = db_helper()
     menu_botton = create_menu_botton()
+    menu_botton.create()
 
     def __init__(self):
         super().__init__()
+
         self.Table_1 = tk.Button(self, text="Table_1", command=self.Table_1, width = 15, height = 3)
         self.Table_1.place(x = 10, y = 25)
 
@@ -30,7 +32,9 @@ class Window(tk.Tk):
         self.window_summ = tk.Entry(self)
         self.window_summ.place(x=260, y=480)
 
-        self.menu_botton.menu_botton()
+        self.menu_botton.create()
+
+
 
 
 
@@ -70,6 +74,7 @@ class Window(tk.Tk):
             self.bg = parsing_bd()
             self.show_summ()
             self.window_enter.insert('1.0', self.bg)
+
 
 
 if __name__ == "__main__":
