@@ -1,19 +1,13 @@
 import tkinter.ttk as ttk
 import tkinter as tk
 from DB import *
-
-def execute_query(query):
-    try:
-        conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
-        cursor = conn.cursor()
-        result=cursor.execute(query)
-        conn.commit()
-        conn.close()
-        return  result
-    except:
-        return  None
+from db_helper import db_helper
+from create_menu_botton import create_menu_botton
 
 class Window(tk.Tk):
+    helper = db_helper()
+    menu_botton = create_menu_botton()
+
     def __init__(self):
         super().__init__()
         self.Table_1 = tk.Button(self, text="Table_1", command=self.Table_1, width = 15, height = 3)
@@ -36,27 +30,17 @@ class Window(tk.Tk):
         self.window_summ = tk.Entry(self)
         self.window_summ.place(x=260, y=480)
 
-        got_hight_menu = got_count_menu()
-        line = (got_hight_menu[0] // 3) + 1
-        counter = 0
-        y = 30
-        for b in range(line):
-            x = 450
-            y += 60
-            print(b)
-            for i in range(3):
-                counter += 1
-                got_name_str = got_name(counter)
-                if got_name_str == "None":
-                    break
-                x += 130
-                print(i)
-                i = tk.Button(self, text = got_name_str, command = self.doit, width = 15, height =3).place(y = y, x = x)
-                # menu_botton(self, y, x, got_name_str)
+        self.menu_botton.menu_botton()
+
+
+
+
     def doit(self):
         print('Успех')
-        execute_query(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 1, 1)')
+        self.helper.execute_query(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 1, 1)')
         self.upgrade()
+
+
 
 
     def Table_1(self):
@@ -87,29 +71,10 @@ class Window(tk.Tk):
             self.show_summ()
             self.window_enter.insert('1.0', self.bg)
 
-class menu_botton(tk.Button):
-    def doit(self):
-        print('Успех')
-        result=execute_query(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 1, 1)')
-        if result is not None:
-            self.upgrade()
-    def upgrade(self):
-        if window_enter is not None:
-            window_enter.delete('1.0', tk.END)
-            self.bg = parsing_bd()
-            # self.show_summ()
-            window_enter.insert('1.0', self.bg)
-    def __init__(self, name, y, x, name_menu):
-        super().__init__()
-        self.button = tk.Button(name, text = {name_menu}, command = self.doit, width = 15, height =3).place(y = y, x = x)
-
-
 
 if __name__ == "__main__":
     window = Window()
-
     window.geometry("1000x600")
-
     window.mainloop()
 
 
