@@ -7,7 +7,7 @@ from Widgets.listWidget import listWidget
 from Widgets.tableWidget import tableWidget
 app=None;
 dbHelper = DBHelper()
-Window.size = (1300, 800)
+Window.maximize()
 class AppWithKivy(App):
     def on_addorder(self,widget,selected):
         if self.selectedTable is not None:
