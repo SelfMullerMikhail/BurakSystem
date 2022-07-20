@@ -1,6 +1,4 @@
 import tkinter as tk
-import mysql.connector
-from mysql.connector import Error
 from db_helper import db_helper
 
 def table_1_bd():

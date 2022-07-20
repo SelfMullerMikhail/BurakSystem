@@ -1,6 +1,4 @@
-import tkinter as tk
 from DB import *
-
 
 class upgrade():
     def upgrade_text(self, window_enter):
@@ -17,6 +15,8 @@ class upgrade():
         # if self.window_enter is not None:
         self.upgrade_text(window_enter)
         self.upgrade_summ(window_summ)
+
+
 
     def clear(self, window_enter, window_summ):
         clear_bd()

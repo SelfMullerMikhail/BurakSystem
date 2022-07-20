@@ -1,11 +1,8 @@
-import tkinter.ttk as ttk
 import tkinter as tk
 from DB import *
 from db_helper import db_helper
 from create_menu_botton import create_menu_botton
 from upgrade_all import upgrade
-
-# def return_function():
 
 class Window(tk.Tk):
     helper = db_helper()
@@ -51,8 +48,6 @@ class Window(tk.Tk):
 
     def clear_button(self):
         self.menu_upgrade.clear(self.window_enter, self.window_summ)
-
-
 
 
 if __name__ == "__main__":
