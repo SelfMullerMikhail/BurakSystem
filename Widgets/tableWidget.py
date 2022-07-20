@@ -61,9 +61,9 @@ class tableWidget(GridLayout):
 
     self.order_box=StackLayout(orientation='lr-tb')
     self.orders_scroll.add_widget(self.order_box)
-    self.total_label=Label(text="TOTAL", size_hint=(1, None), height=100,font_size='40sp')
+    self.total_label=Label(text="TOTAL", size_hint=(1, None), height=100,font_size='60sp')
     self.add_widget(self.total_label)
-    self.add_widget(Button(text='Button 1', size_hint=(1, None), height=100))
+    self.add_widget(Button(text='Clear', size_hint=(1, None), height=100,on_press=lambda x:self.close_table()))
 
     self.selected_table=None
 
@@ -81,7 +81,13 @@ class tableWidget(GridLayout):
     self.get_total()
 
   def add_order(self,order):
-    self.check_add_or_increase(order)
+    for child in self.order_box.children[:]:
+      if child.order==order:
+        child.increase_quantity()
+        self.get_total()
+        return
+    rowid=self.__dbHelper.add_order(order[0],self.selected_table.dataObj[0],self.selected_table.guid)
+    self.check_add_or_increase(order,rowid)
 
   def get_total(self):
     total=0
@@ -95,7 +101,6 @@ class tableWidget(GridLayout):
         child.increase_quantity()
         self.get_total()
         return
-    rowid=self.__dbHelper.add_order(order[0],self.selected_table.dataObj[0],self.selected_table.guid)
     self.order_box.add_widget(orderWidget(order,rowid,quantity))
     self.get_total()
 
@@ -106,8 +111,12 @@ class tableWidget(GridLayout):
     if self.selected_table is None:
       return
     self.selected_table.renew_guid()
+    self.order_box.clear_widgets()
+    self.get_total();
 
   def new_table(self):
     if self.selected_table is None:
       return
     self.selected_table.renew_guid()
+    self.order_box.clear_widgets()
+    self.get_total();
