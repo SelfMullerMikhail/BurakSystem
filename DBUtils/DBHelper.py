@@ -30,7 +30,7 @@ class DBHelper:
       self.__connection=None
       self.__cursor=None
 
-  def __execute_query(self, query, params=None):
+  def __execute_query(self, query,isFetch=True, params=None):
     self.__open_connection()
     if not self.__connection:
       return None
@@ -39,9 +39,12 @@ class DBHelper:
         self.__cursor.execute(query, params)
       else:
         self.__cursor.execute(query)
-      return self.__cursor.fetchall()
+      if isFetch:
+        return self.__cursor.fetchall()
+      self.__connection.commit()
+      return self.__cursor.lastrowid
     except Error as e:
-      print("Error in executing query:"+str(e.message))
+      print("Error in executing query")
       return None
       
   '''Public methods'''
@@ -50,4 +53,16 @@ class DBHelper:
   
   def get_all_tables(self):
     return self.__execute_query("SELECT * FROM Tables")
+
+  def get_all_orders(self,guid):
+    return self.__execute_query(f"SELECT * FROM Orders WHERE OrderId='{guid}'")
+
+  def add_order(self,drink,table,guid):
+    return self.__execute_query(f"INSERT INTO Orders (Customer,Drink,OrderId) VALUES ({table},{drink},'{guid}')",False)
+
+  def remove_order(self,id):
+    return self.__execute_query(f"DELETE FROM Orders Where Id={id}",False)
+
+  def update_quantity(self,id,quantity):
+    return self.__execute_query(f"UPDATE Orders SET Quantity={quantity} WHERE Id={id}",False)
 
