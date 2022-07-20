@@ -40,7 +40,7 @@ class listWidget(Splitter):
 
     def throw_event(self,x):
         if self.selected is not None:
-            self.selected.set_selected(False);
+            self.selected.set_selected(False)
         self.selected=x
         self.selected.set_selected(True);
         self.dispatch('on_addorder',x)
