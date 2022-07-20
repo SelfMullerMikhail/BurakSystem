@@ -25,12 +25,12 @@ class displayWidget(Button):
             
 
 class listWidget(Splitter):
-    def __init__(self, drinks,**kwargs):
+    def __init__(self, drinks,isRight,**kwargs):
         super(listWidget,self).__init__(**kwargs)
         self.register_event_type('on_addorder')
         self.build()
         self.refresh_drinks(drinks)
-        self.sizable_from="right"
+        self.sizable_from=("right","left")[isRight==True]
         self.strip_size="7pt"
         self.selected=None
         
