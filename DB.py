@@ -1,6 +1,7 @@
 import tkinter as tk
 import mysql.connector
 from mysql.connector import Error
+from db_helper import db_helper
 
 def table_1_func():
     global peremen
@@ -14,23 +15,25 @@ def table_3_func():
     global peremen
     peremen = 3
 
+def return_table():
+    try:
+        return peremen
+    except:
+        print("Error table")
+
+helper = db_helper()
 
 def parsing_bd():
-    conn = mysql.connector.connect(host = 'localhost', user = 'root', passwd = 'zuma057195Z!', db = 'posterposs')
-    cursor = conn.cursor()
-    cursor.execute(f'SELECT * FROM summ_count WHERE Tables = {peremen}')
-    a = (str(cursor.fetchall()).replace('), (', '\n')).strip('[').strip(']').strip('(').strip(')').strip(",").strip("'")
-    print(a)
-    return a
-    conn.close()
+    text = helper.execute_query_fetchall(f'SELECT * FROM summ_count WHERE Tables = {peremen}')
+    text = str(text)
+    result = text.replace('), (', '\n').strip('[').strip(']').strip('(').strip(')').strip(",").strip("'")
+    return result
+
 
 def tables_summ():
-    conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
-    cursor = conn.cursor()
-    cursor.execute(f'SELECT total FROM summ_one_table WHERE tables = 1')
-    a = 'summ: ' + str(cursor.fetchall()).strip("[(Decimal('").strip("'),)]") + ' TL'
-    return a
-    conn.close()
+    summ = helper.execute_query_fetchone(f'SELECT total FROM summ_one_table WHERE tables = {peremen}')
+    result = str(summ).strip("((Decimal('").strip("'),)")
+    return f" summ:  {result} TL"
 
 def clear():
     conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
