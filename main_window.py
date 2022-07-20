@@ -6,8 +6,6 @@ from create_menu_botton import create_menu_botton
 
 class Window(tk.Tk):
     helper = db_helper()
-    menu_botton = create_menu_botton()
-    menu_botton.create()
 
     def __init__(self):
         super().__init__()
@@ -32,48 +30,39 @@ class Window(tk.Tk):
         self.window_summ = tk.Entry(self)
         self.window_summ.place(x=260, y=480)
 
-        self.menu_botton.create()
-
-
-
-
-
-
-    def doit(self):
-        print('Успех')
-        self.helper.execute_query(f'INSERT orders (id_sell_table, id_menu, counts) VALUES (1, 1, 1)')
-        self.upgrade()
-
-
+        menu_botton = create_menu_botton()
 
 
     def Table_1(self):
         table_1_func()
-        self.upgrade()
+        self.upgrade_all()
 
     def Table_2(self):
         table_2_func()
-        self.upgrade()
+        self.upgrade_all()
 
     def Table_3(self):
         table_3_func()
-        self.upgrade()
+        self.upgrade_all()
 
     def clear(self):
         clear()
-        self.upgrade()
+        self.upgrade_all()
 
-    def show_summ(self):
+    def upgrade_text(self):
+        self.window_enter.delete('1.0', tk.END)
+        self.bg = parsing_bd()
+        self.window_enter.insert('1.0', self.bg)
+
+    def upgrade_summ(self):
         self.window_summ.delete(1, tk.END)
         self.sums = tables_summ()
         self.window_summ.insert(1, self.sums)
 
-    def upgrade(self):
+    def upgrade_all(self):
         if self.window_enter is not None:
-            self.window_enter.delete('1.0', tk.END)
-            self.bg = parsing_bd()
-            self.show_summ()
-            self.window_enter.insert('1.0', self.bg)
+            self.upgrade_text()
+            self.upgrade_summ()
 
 
 

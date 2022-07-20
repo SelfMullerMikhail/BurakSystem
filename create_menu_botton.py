@@ -1,15 +1,24 @@
-from db_helper import db_helper
 from DB import *
+import tkinter as tk
 
-
-class create_menu_botton(tk.Button):
+class create_menu_botton():
     helper = db_helper()
-    def doit(self):
-        print('Успех')
-    def create(self):
-        self.counter = 1
-        self.line = self.helper.execute_query("SELECT max(id) FROM menu")
+    def get_line(self):
+        self.line = self.helper.execute_query_fetchone("SELECT max(id) FROM menu")
         self.line = (self.line[0] // 3) + 1
+        return self.line
+
+    def buttons_create(self, counter, y, x):
+        def button_function():
+            table = return_table()
+            self.helper.execute_query_insert(f"INSERT orders (id_sell_table, id_menu, counts) VALUES({table}, {counter}, 1)")
+        self.i = tk.Button(text=self.name, command=button_function, width=15, height=3)
+        self.i.place(y=y, x=x)
+
+
+    def __init__(self):
+        self.counter = 1
+        self.line = self.get_line()
         self.y = 20
         for b in range(self.line):
             self.x = 450
@@ -19,8 +28,6 @@ class create_menu_botton(tk.Button):
                 if self.name == "None":
                     break
                 self.x += 130
-                self.i = tk.Button(self, text=self.name, command = self.doit, width=15, height=3)
-                self.i.place(y = self.y, x=self.x)
+                self.buttons_create(self.counter, self.y, self.x)
                 self.counter += 1
-main = create_menu_botton()
-main.create()
+
