@@ -1,8 +1,10 @@
 from DB import *
 import tkinter as tk
+from upgrade_all import upgrade
 
 class create_menu_botton():
     helper = db_helper()
+    upgrade = upgrade()
     def get_line(self):
         self.line = self.helper.execute_query_fetchone("SELECT max(id) FROM menu")
         self.line = (self.line[0] // 3) + 1
@@ -12,6 +14,8 @@ class create_menu_botton():
         def button_function():
             table = return_table()
             self.helper.execute_query_insert(f"INSERT orders (id_sell_table, id_menu, counts) VALUES({table}, {counter}, 1)")
+            upgrade.upgrade_all()
+            print("Work!")
         self.i = tk.Button(text=self.name, command=button_function, width=15, height=3)
         self.i.place(y=y, x=x)
 
