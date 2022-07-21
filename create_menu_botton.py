@@ -1,4 +1,4 @@
-from DB import db_helper, return_table, got_name, parsing_bd
+from DB import *
 import tkinter as tk
 from upgrade_all import upgrade
 
@@ -34,4 +34,18 @@ class create_menu_botton():
                 self.x += 130
                 self.buttons_create(self.counter, self.y, self.x)
                 self.counter += 1
+
+class create_menegment_botton():
+
+    def buttons_create(self, number):
+        def button_function():
+            switch_table_bd(number)
+        self.i = tk.Button(text=f"Table {number}", command=button_function, width=15, height=3)
+        self.i.grid()
+
+    def __init__(self):
+        for i in range(5):
+            self.buttons_create(i+1)
+
+
 
