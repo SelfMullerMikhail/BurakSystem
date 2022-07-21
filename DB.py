@@ -1,17 +1,9 @@
 import tkinter as tk
 from db_helper import db_helper
 
-def table_1_bd():
+def switch_table_bd(number):
     global peremen
-    peremen = 1
-
-def table_2_bd():
-    global peremen
-    peremen = 2
-
-def table_3_bd():
-    global peremen
-    peremen = 3
+    peremen = number
 
 def return_table():
     try:

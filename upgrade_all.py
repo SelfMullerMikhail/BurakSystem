@@ -1,6 +1,6 @@
 from DB import *
-
 class upgrade():
+
     def upgrade_text(self, window_enter):
         window_enter.delete('1.0', tk.END)
         self.bg = parsing_bd()
@@ -17,7 +17,9 @@ class upgrade():
         self.upgrade_summ(window_summ)
 
 
-
     def clear(self, window_enter, window_summ):
         clear_bd()
         self.upgrade_all(window_enter, window_summ)
+
+
+
