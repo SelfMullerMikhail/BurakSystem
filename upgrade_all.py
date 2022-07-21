@@ -1,8 +1,8 @@
-from BD import BD
+from DB import DB
 import tkinter as tk
 
 class upgrade():
-    database = BD()
+    database = DB()
     def upgrade_text(self, window_enter):
         window_enter.delete('1.0', tk.END)
         self.bg = self.database.parsing_bd()

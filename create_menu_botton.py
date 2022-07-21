@@ -1,11 +1,11 @@
-from BD import db_helper, BD
+from DB import db_helper, DB
 import tkinter as tk
 from upgrade_all import upgrade
 
 class create_menu_botton():
     helper = db_helper()
     upgrade_class = upgrade()
-    database = BD()
+    database = DB()
 
     def get_line(self):
         self.line = self.helper.execute_query_fetchone("SELECT max(id) FROM menu")
@@ -37,8 +37,9 @@ class create_menu_botton():
                 self.buttons_create(self.counter, self.y, self.x, wind, summ)
                 self.counter += 1
 
+
 class create_menegment_botton():
-    database = BD()
+    database = DB()
     upgrade_class = upgrade()
     def buttons_create(self, number, wind, summ):
         def button_function():

@@ -1,6 +1,6 @@
 from db_helper import db_helper
 
-class BD():
+class DB():
     def switch_table_bd(self, number):
         global peremen
         peremen = number
