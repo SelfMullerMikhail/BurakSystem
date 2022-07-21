@@ -1,4 +1,4 @@
-from DB import *
+import tkinter as tk
 from db_helper import db_helper
 from create_menu_botton import create_menu_botton, create_menegment_botton
 from upgrade_all import upgrade
