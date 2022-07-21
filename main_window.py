@@ -9,15 +9,6 @@ class Window(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        # self.Table_1 = tk.Button(self, text="Table_1", command=self.Table_1, width = 15, height = 3)
-        # self.Table_1.grid()
-        #
-        # self.Table_2 = tk.Button(self, text="Table_2", command=self.Table_2, width = 15, height = 3)
-        # self.Table_2.grid()
-        #
-        # self.Table_3 = tk.Button(self, text="Table_3", command=self.Table_3, width = 15, height = 3)
-        # self.Table_3.grid()
-        #
         self.Table_Clear = tk.Button(self, text = "Clear", command = self.clear_button, width = 15, height =3)
         self.Table_Clear.place(x = 380, y = 430)
 
@@ -34,20 +25,6 @@ class Window(tk.Tk):
         self.menu_botton = create_menu_botton(self.window_enter, self.window_summ)
 
         self.tables_botton = create_menegment_botton(self.window_enter, self.window_summ)
-
-
-
-    # def Table_1(self):
-    #     switch_table_bd(1)
-    #     self.menu_upgrade.upgrade_all(self.window_enter, self.window_summ)
-    #
-    # def Table_2(self):
-    #     switch_table_bd(2)
-    #     self.menu_upgrade.upgrade_all(self.window_enter, self.window_summ)
-    #
-    # def Table_3(self):
-    #     switch_table_bd(3)
-    #     self.menu_upgrade.upgrade_all(self.window_enter, self.window_summ)
 
     def clear_button(self):
         self.menu_upgrade.clear(self.window_enter, self.window_summ)

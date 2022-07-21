@@ -1,7 +1,6 @@
 from BD import db_helper, BD
 import tkinter as tk
 from upgrade_all import upgrade
-# from main_window import window
 
 class create_menu_botton():
     helper = db_helper()
