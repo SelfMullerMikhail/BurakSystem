@@ -18,8 +18,8 @@ class Window(tk.Tk):
         # self.Table_3 = tk.Button(self, text="Table_3", command=self.Table_3, width = 15, height = 3)
         # self.Table_3.grid()
         #
-        # self.Table_Clear = tk.Button(self, text = "Clear", command = self.clear_button, width = 15, height =3)
-        # self.Table_Clear.place(x = 380, y = 430)
+        self.Table_Clear = tk.Button(self, text = "Clear", command = self.clear_button, width = 15, height =3)
+        self.Table_Clear.place(x = 380, y = 430)
 
         self.label = tk.Label(self, text="BurakSystem")
         self.label.place(x=900, y=570)
@@ -31,9 +31,9 @@ class Window(tk.Tk):
 
         self.menu_upgrade = upgrade()
 
-        self.menu_botton = create_menu_botton()
+        self.menu_botton = create_menu_botton(self.window_enter, self.window_summ)
 
-        self.tables_botton = create_menegment_botton()
+        self.tables_botton = create_menegment_botton(self.window_enter, self.window_summ)
 
 
 
