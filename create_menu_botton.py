@@ -1,4 +1,4 @@
-from DB import *
+from DB import db_helper, return_table, got_name, switch_table_bd
 import tkinter as tk
 from upgrade_all import upgrade
 

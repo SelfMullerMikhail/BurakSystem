@@ -1,4 +1,6 @@
-from DB import *
+from DB import parsing_bd, tables_summ, clear_bd
+import tkinter as tk
+
 class upgrade():
 
     def upgrade_text(self, window_enter):

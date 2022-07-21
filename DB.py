@@ -1,5 +1,5 @@
-import tkinter as tk
 from db_helper import db_helper
+
 
 def switch_table_bd(number):
     global peremen
