@@ -14,7 +14,6 @@ class upgrade():
         window_summ.insert(1, self.sums)
 
     def upgrade_all(self, window_enter, window_summ):
-        # if self.window_enter is not None:
         self.upgrade_text(window_enter)
         self.upgrade_summ(window_summ)
 
