@@ -5,3 +5,6 @@ class Label():
         self.label = tk.Label(text=text)
         self.label.place(x=900, y=570)
 
+    def __init__(self):
+        self.label()
+

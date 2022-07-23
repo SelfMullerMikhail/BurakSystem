@@ -22,7 +22,7 @@ class Window(tk.Tk):
         self.menu_upgrade = upgrade()
         self.menu_botton = create_menu_botton(self.window_enter, self.window_summ)
         self.tables_botton = tables_botton(self.window_enter, self.window_summ)
-        self.calculator = Calculater(self.window_enter, self.window_summ)
+        self.calculator = Calculater(self.window_enter, self.window_summ, self.menu_botton)
 
 
 if __name__ == "__main__":

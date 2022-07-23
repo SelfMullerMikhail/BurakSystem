@@ -1,18 +1,16 @@
 from db_helper import db_helper
 
 class DB():
+    helper = db_helper()
+
     def switch_table_bd(self, number):
         global peremen
         peremen = number
-
     def return_table(self):
         try:
             return peremen
         except:
             print("Error return_table")
-
-    helper = db_helper()
-
     def parsing_bd(self):
         try:
             self.text = self.helper.execute_query_fetchall(f'SELECT * FROM summ_count WHERE Tables = {peremen}')
@@ -43,3 +41,4 @@ class DB():
             return self.result
         except:
             print("Error def got_name")
+

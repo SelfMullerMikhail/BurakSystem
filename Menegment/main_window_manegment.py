@@ -2,7 +2,15 @@ import tkinter as tk
 
 
 class Menegment():
-    def __init__(self):
+
+    def add_ingridient(self):
+        print("add_ingridient")
+    def add_menu(self):
+        print("add_menu")
+    def add_shipment(self):
+        print("add_shipment")
+
+    def create(self):
         self.menu_label = tk.Menubutton(text="Menu")
         self.menu = tk.Menu(self.menu_label)
         self.menu.add_command(label="add_ingridient", command=self.add_ingridient)
@@ -11,9 +19,5 @@ class Menegment():
         self.menu_label["menu"] = self.menu
         self.menu_label.grid()
 
-    def add_ingridient(self):
-        print("add_ingridient")
-    def add_menu(self):
-        print("add_menu")
-    def add_shipment(self):
-        print("add_shipment")
+    def __init__(self):
+        self.create()
