@@ -1,5 +1,4 @@
 import tkinter as tk
-# from New_Project.switcher import switcher
 from New_Project.table import switcher
 from New_Project.db_helper import Db_helper
 

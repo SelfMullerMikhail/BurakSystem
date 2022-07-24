@@ -1,6 +1,8 @@
 import tkinter as tk
 from New_Project.pay_folder.window_orders import Window_orders
 from New_Project.pay_folder.summ_order import Summ_order
+from New_Project.pay_folder.total_money import Total_money
+from New_Project.pay_folder.change_order import Change_order
 
 class Pay_botton():
     def pay_window(self):
@@ -17,9 +19,10 @@ class Pay_window():
     def __init__(self):
         self.window = tk.Tk()
         self.window.geometry("700x500")
-
         self.window_orders = Window_orders(self.window)
+        self.total_money = Total_money(self.window)
         self.summ_order = Summ_order(self.window)
+        self.change_order = Change_order(self.window)
 
         self.window.mainloop()
 
