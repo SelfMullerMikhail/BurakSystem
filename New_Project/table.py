@@ -6,10 +6,10 @@ from tab import Switch_tab
 
 class Table():
     helper = Db_helper()
-    table = Switch_tab()
+    tab = Switch_tab()
     def buttons_create(self, tab):
         def button_function():
-            self.table.switch_tab(tab)
+            self.tab.switch_tab(tab)
             self.Text.delete()
             self.Text.insert(tab)
             self.Summ.delete()

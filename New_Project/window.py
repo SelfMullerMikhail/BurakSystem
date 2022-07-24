@@ -5,12 +5,10 @@ from table import Table
 from drinks import Drinks
 from menegment import menegment
 from clear_table import Clear_table
-from pay import Pay
+from New_Project.pay_folder.pay import Pay_botton
 
 
 class Window(tk.Tk):
-    def test(self):
-        self.summ.insert(1)
 
 
     def __init__(self):
@@ -21,7 +19,7 @@ class Window(tk.Tk):
         self.table = Table(self.text, self.summ)
         self.drinks = Drinks(self.text, self.summ)
         self.clear_table = Clear_table(self.text, self.summ)
-        self.pay = Pay()
+        self.pay_botton = Pay_botton()
 
 
 

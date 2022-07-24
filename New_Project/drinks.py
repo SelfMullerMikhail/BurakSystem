@@ -40,7 +40,6 @@ class Drinks():
             self.y += 60
             for i in range(3):
                 self.name = self.got_name_drink(self.counter)
-                print(self.name, type(self.name))
                 if self.name[0] == "None":
                     break
                 self.x += 130
