@@ -1,5 +1,5 @@
 import tkinter as tk
-from tab import Switch_tab
+from switcher import Switch_tab
 from db_helper import Db_helper
 
 class Clear_table():

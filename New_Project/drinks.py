@@ -1,13 +1,11 @@
 import tkinter as tk
 from db_helper import Db_helper
-from tab import Switch_tab
+from switcher import Switch_tab, switcher
 import re
-from text import Text
-from summ import Summ
 
 class Drinks():
     helper = Db_helper()
-    tabel = Switch_tab()
+    # tabel = Switch_tab()
     def got_name_drink(self, counter):
         self.name = str(self.helper.execute_query_fetchone(f"SELECT name FROM menu WHERE id = {counter}"))
         self.name = re.findall(r"\w+", self.name)
@@ -20,7 +18,8 @@ class Drinks():
 
     def buttons_create(self, counter, y, x):
         def button_function():
-            self.tab = self.tabel.got_tab()
+            # self.tab = self.tabel.got_tab()
+            self.tab = switcher.got_tab()
             self.helper.execute_query_insert(
                 f"INSERT orders (id_sell_table, id_menu, counts) VALUES({self.tab}, {counter}, 1)")
             self.text_drinks.delete()

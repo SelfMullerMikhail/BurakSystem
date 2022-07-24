@@ -1,15 +1,13 @@
 import tkinter as tk
 from db_helper import Db_helper
-from text import Text
-from summ import Summ
-from tab import Switch_tab
+from switcher import switcher
 
 class Table():
     helper = Db_helper()
-    tab = Switch_tab()
     def buttons_create(self, tab):
         def button_function():
-            self.tab.switch_tab(tab)
+            # self.tab.switch_tab(tab)
+            switcher.switch_tab(tab)
             self.Text.delete()
             self.Text.insert(tab)
             self.Summ.delete()
