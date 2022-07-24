@@ -10,12 +10,10 @@ class Change_order():
         self.transaction_button.place(x = 430, y = 10)
 
     def transaction(self):
-        self.summ_money = int(self.Summ.get_money())[0]
-        # self.summ_money = int(re.findall(r"\d+", self.summ_money_get[0]))
-        self.total_money = self.Total.get_money()
-        print(self.summ_money, "summ_money")
-        print(self.total_money, "total_money")
-        self.entery.insert(1, int(self.total_money) - (self.summ_money))
+        self.summ_money_get = self.Summ.get_money()
+        self.summ_money = int(re.findall(r"\d+", self.summ_money_get)[0])
+        self.total_money = int(self.Total.get_money())
+        self.entery.insert(1, self.total_money - self.summ_money)
 
     def __init__(self, window, total, summ):
         self.Summ = summ
