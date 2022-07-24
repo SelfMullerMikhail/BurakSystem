@@ -1,9 +1,9 @@
 import tkinter as tk
-from db_helper import db_helper
+from db_helper import Db_helper
 import re
 
-class summ():
-    helper = db_helper()
+class Summ():
+    helper = Db_helper()
     def delete(self):
         self.summ.delete("0", tk.END)
 
@@ -14,6 +14,7 @@ class summ():
         else:
             self.summ.insert("0", "None")
         print(f"Summ is work! Tab: {tab}")
+
 
     def summ_create(self):
         self.summ = tk.Entry()

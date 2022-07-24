@@ -1,8 +1,8 @@
 import tkinter as tk
-from db_helper import db_helper
+from db_helper import Db_helper
 
-class text():
-    helper = db_helper()
+class Text():
+    helper = Db_helper()
     def delete(self):
         self.text.delete("1.0", tk.END)
 

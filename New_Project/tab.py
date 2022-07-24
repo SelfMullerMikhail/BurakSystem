@@ -1,4 +1,4 @@
-class switch_tab():
+class Switch_tab():
     tab = int
     def got_tab(self):
         global tab

@@ -1,6 +1,6 @@
 import mysql.connector
 
-class db_helper():
+class Db_helper():
 
     def __init__(self):
         self.host = 'localhost'
