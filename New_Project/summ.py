@@ -15,7 +15,11 @@ class summ():
             self.summ.insert("0", "None")
         print(f"Summ is work! Tab: {tab}")
 
-
-    def __init__(self):
+    def summ_create(self):
         self.summ = tk.Entry()
         self.summ.place(x=370, y=400)
+
+
+
+    def __init__(self):
+        self.summ_create()

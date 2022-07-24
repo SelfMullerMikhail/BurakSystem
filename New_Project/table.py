@@ -27,4 +27,5 @@ class table():
     def __init__(self):
         self.summ = summ()
         self.text = text()
+
         self.max_line()

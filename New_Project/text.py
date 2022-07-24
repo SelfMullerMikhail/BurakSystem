@@ -11,7 +11,11 @@ class text():
         self.text.insert("1.0", self.text_bd)
         print(f"Insert text is work! text_bd: {self.text_bd}")
 
-    def __init__(self):
-
+    def create_text(self):
         self.text = tk.Text(width=45)
         self.text.place(x=130, y=10)
+
+    def __init__(self):
+        self.create_text()
+
+

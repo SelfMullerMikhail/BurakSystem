@@ -4,6 +4,7 @@ from text import text
 from summ import summ
 from table import table
 from drinks import drinks
+from menegment import menegment
 
 
 class window(tk.Tk):
@@ -13,9 +14,7 @@ class window(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.button = tk.Button(text="test", command=self.test)
-        self.button.grid()
-
+        self.menegment = menegment()
         self.text = text()
         self.summ = summ()
         self.table = table()
