@@ -8,3 +8,5 @@ class Switch_tab():
         print("switch is work!")
         global tab
         tab = number
+
+switcher = Switch_tab()
