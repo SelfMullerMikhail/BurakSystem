@@ -20,9 +20,9 @@ class Pay_window():
         self.window = tk.Tk()
         self.window.geometry("700x500")
         self.window_orders = Window_orders(self.window)
-        self.total_money = Total_money(self.window)
         self.summ_order = Summ_order(self.window)
-        self.change_order = Change_order(self.window)
+        self.total_money = Total_money(self.window)
+        self.change_order = Change_order(self.window, self.total_money, self.summ_order )
 
         self.window.mainloop()
 

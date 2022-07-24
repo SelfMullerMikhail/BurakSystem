@@ -16,6 +16,8 @@ class Summ_order():
             self.summ.insert("0", int(re.findall(r"\d+", self.text_bd)[0]))
         else:
             self.summ.insert("0", "None")
+    def get_money(self):
+        return self.text_bd
 
     def __init__(self, window):
         self.helper = Db_helper()
