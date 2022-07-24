@@ -14,6 +14,7 @@ class table():
             self.text.insert(tab)
             self.summ.delete()
             self.summ.insert(tab)
+            print(f"Table is work! tab: {tab}")
 
         self.i = tk.Button(text=f"Table {tab}", command=button_function, width=15, height=3)
         self.i.grid()

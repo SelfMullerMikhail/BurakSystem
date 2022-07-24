@@ -24,12 +24,14 @@ class drinks():
     def buttons_create(self, counter, y, x):
         def button_function():
             self.tab = self.tabel.got_tab()
+            self.helper.execute_query_insert(
+                f"INSERT orders (id_sell_table, id_menu, counts) VALUES({self.tab}, {counter}, 1)")
             self.text.delete()
             self.text.insert(self.tab)
             self.summ.delete()
             self.summ.insert(self.tab)
-            self.helper.execute_query_insert(
-                f"INSERT orders (id_sell_table, id_menu, counts) VALUES({self.tab}, {counter}, 1)")
+            print(f"Drinks is work! tab: {self.tab}")
+
 
 
 
