@@ -5,7 +5,8 @@ from New_Project.db_helper import Db_helper
 
 class Summ_order():
 
-    # def insert(self):
+    def delete(self):
+        self.summ.delete(0, tk.END)
 
     def create(self):
         self.summ = tk.Entry(self.window)

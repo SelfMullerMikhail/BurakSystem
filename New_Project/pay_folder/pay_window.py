@@ -22,7 +22,7 @@ class Pay_window():
         self.window_orders = Window_orders(self.window)
         self.summ_order = Summ_order(self.window)
         self.total_money = Total_money(self.window)
-        self.change_order = Change_order(self.window, self.total_money, self.summ_order )
+        self.change_order = Change_order(self.window, self.total_money, self.summ_order, self.window_orders )
 
         self.window.mainloop()
 

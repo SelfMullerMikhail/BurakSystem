@@ -4,6 +4,9 @@ from New_Project.db_helper import Db_helper
 
 class Window_orders():
 
+    def delete(self):
+        self.window_orders.delete("1.0", tk.END)
+
     def insert(self):
         self.tab = switcher.got_tab()
         print(self.tab)
