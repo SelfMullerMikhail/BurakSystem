@@ -3,6 +3,7 @@ from New_Project.pay_folder.window_orders import Window_orders
 from New_Project.pay_folder.summ_order import Summ_order
 from New_Project.pay_folder.total_money import Total_money
 from New_Project.pay_folder.change_order import Change_order
+from New_Project.pay_folder.exit_botton import Exit_botton
 
 class Pay_botton():
     def pay_window(self):
@@ -22,7 +23,8 @@ class Pay_window():
         self.window_orders = Window_orders(self.window)
         self.summ_order = Summ_order(self.window)
         self.total_money = Total_money(self.window)
-        self.change_order = Change_order(self.window, self.total_money, self.summ_order, self.window_orders )
+        self.change_order = Change_order(self.window, self.total_money, self.summ_order, self.window_orders)
+        self.exit_botton = Exit_botton(self.window)
 
         self.window.mainloop()
 
