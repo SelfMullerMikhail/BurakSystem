@@ -5,7 +5,7 @@ from table import Table
 from drinks import Drinks
 from menegment import menegment
 from clear_table import Clear_table
-from New_Project.pay_folder.pay import Pay_botton
+from New_Project.pay_folder.pay_window import Pay_botton
 
 
 class Window(tk.Tk):

@@ -10,10 +10,16 @@ class Change_order():
         self.transaction_button.place(x = 430, y = 10)
 
     def transaction(self):
+        self.entery.delete(0, tk.END)
         self.summ_money_get = self.Summ.get_money()
         self.summ_money = int(re.findall(r"\d+", self.summ_money_get)[0])
         self.total_money = int(self.Total.get_money())
-        self.entery.insert(1, self.total_money - self.summ_money)
+        if self.total_money > self.summ_money:
+            self.entery.insert(0, self.total_money - self.summ_money)
+        else:
+            self.entery.insert(0, "More money")
+
+
 
     def __init__(self, window, total, summ):
         self.Summ = summ
