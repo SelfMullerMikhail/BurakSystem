@@ -2,6 +2,7 @@ import tkinter as tk
 from New_Project.hisory.text import Text
 from New_Project.hisory.botton_show import Botton_show
 from New_Project.hisory.return_history import Return_history
+from New_Project.hisory.entery_data import Entery_data
 
 class History():
 
@@ -12,9 +13,10 @@ class History():
     def __init__(self, main_window):
         self.main_window = main_window
         self.create_frame()
-        self.return_history = Return_history(self.window)
+        self.entery_data = Entery_data(self.window)
         self.hostory_window = Text(self.window)
         self.botton_show = Botton_show(self.window, self.hostory_window)
+        self.return_history = Return_history(self.window)
 
         self.window.mainloop()
 
