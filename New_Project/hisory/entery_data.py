@@ -9,17 +9,12 @@ class Entery_data():
         print('--test--')
 
     def create_list(self):
-        # self.list_label = tk.Menubutton(self.history_window, text = "Times")
-        # self.list = tk.Menu(self.list_label)
-        # for i in range(10):
-        #     self.list.add_command(label="add_ingridient", command=self.test)
-        #     self.list_label["menu"] = self.list
-        #     self.list_label.grid()
-        self.menu_label = tk.Menubutton(self.history_window, text="Menu")
-        self.menu = tk.Menu(self.menu_label)
-        self.menu.add_command(label="add_ingridient", command=self.test)
-        self.menu_label["menu"] = self.menu
-        self.menu_label.place(x = 600, y = 400)
+        self.list_label = tk.Menubutton(self.history_window, text = "Times")
+        self.list = tk.Menu(self.list_label)
+        for i in range(1000):
+            self.list.add_command(label=f"add_ingridient{i}", command=self.test)
+            self.list_label["menu"] = self.list
+            self.list_label.place(x = 500, y = 20)
 
     def __init__(self, history_window):
         self.history_window = history_window

@@ -14,4 +14,4 @@ class Botton_show():
         self.helper = Db_helper()
         self.window = window
         self.botton = tk.Button(self.window, text = 'Show', width=15, height=3, command = self.show)
-        self.botton.place(x = 500, y = 10)
+        self.botton.place(x = 800, y = 10)
