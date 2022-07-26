@@ -1,6 +1,6 @@
 import tkinter as tk
-from db_helper import Db_helper
-from switcher import switcher
+from New_Project.main_window.db_helper import Db_helper
+from New_Project.main_window.switcher import switcher
 
 class Table():
     helper = Db_helper()

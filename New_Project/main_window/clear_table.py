@@ -1,6 +1,6 @@
 import tkinter as tk
-from switcher import Switch_tab
-from db_helper import Db_helper
+from New_Project.main_window.switcher import Switch_tab
+from New_Project.main_window.db_helper import Db_helper
 
 class Clear_table():
     def clear(self):

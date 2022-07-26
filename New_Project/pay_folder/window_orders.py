@@ -1,6 +1,6 @@
 import tkinter as tk
-from New_Project.table import switcher
-from New_Project.db_helper import Db_helper
+from New_Project.main_window.table import switcher
+from New_Project.main_window.db_helper import Db_helper
 
 class Window_orders():
 
