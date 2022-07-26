@@ -28,7 +28,6 @@ class Pay_window():
 
         self.window = tk.Frame(master=self.main_window, width=1100, height=700)
         self.window.place(x = 1, y = 1)
-        # self.window.geometry("700x500")
         self.window_orders = Window_orders(self.window)
         self.summ_order = Summ_order(self.window)
         self.total_money = Total_money(self.window)

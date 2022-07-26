@@ -11,8 +11,8 @@ class Window():
     def __init__(self):
         window = tk.Tk()
         window.geometry("1100x700")
-        
-        self.menegment = menegment()
+
+        self.menegment = menegment(window)
         self.text = Text()
         self.summ = Summ()
         self.table = Table(self.text, self.summ)

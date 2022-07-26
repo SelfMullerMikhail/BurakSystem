@@ -12,7 +12,7 @@ class menegment():
         print("add_shipment")
 
     def history(self):
-        self.window = History()
+        self.window = History(self.main_window)
 
     def create(self):
         self.menu_label = tk.Menubutton(text="Menu")
@@ -24,5 +24,6 @@ class menegment():
         self.menu_label["menu"] = self.menu
         self.menu_label.grid()
 
-    def __init__(self):
+    def __init__(self, main_window):
+        self.main_window = main_window
         self.create()
