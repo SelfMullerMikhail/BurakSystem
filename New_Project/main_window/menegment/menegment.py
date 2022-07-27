@@ -1,6 +1,6 @@
 import tkinter as tk
 from New_Project.main_window.menegment.history.history_window import History
-from New_Project.main_window.menegment.add_menu.add_menu import Add_menu
+from New_Project.main_window.menegment.add_menu.add_window import Add_menu
 
 
 class menegment():

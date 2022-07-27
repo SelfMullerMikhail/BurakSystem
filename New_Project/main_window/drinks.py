@@ -39,10 +39,15 @@ class Drinks():
             self.y += 60
             for i in range(3):
                 self.name = self.got_name_drink(self.counter)
-                if self.name[0] == "None":
+                print(self.name, self.counter)
+                if self.name[0] == self.max_line:
                     break
-                self.x += 130
-                self.buttons_create(self.counter, self.y, self.x)
+                elif self.name[0] == "None":
+                    print("Drinks None")
+                    self.y -= 60
+                else:
+                    self.x += 130
+                    self.buttons_create(self.counter, self.y, self.x)
                 self.counter += 1
 
     def __init__(self, self_text, self_summ):
