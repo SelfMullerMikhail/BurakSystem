@@ -1,13 +1,18 @@
 import tkinter as tk
-from New_Project.pay_folder.window_orders import Window_orders
-from New_Project.pay_folder.summ_order import Summ_order
-from New_Project.pay_folder.total_money import Total_money
-from New_Project.pay_folder.change_order import Change_order
-from New_Project.pay_folder.exit_botton import Exit_botton
+from New_Project.main_window.pay_folder.window_orders import Window_orders
+from New_Project.main_window.pay_folder.summ_order import Summ_order
+from New_Project.main_window.pay_folder.total_money import Total_money
+from New_Project.main_window.pay_folder.change_order import Change_order
+from New_Project.main_window.pay_folder.exit_botton import Exit_botton
+
 
 class Pay_botton():
     def pay_window(self):
-        self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
+        self.yes_no = self.main_summ.get_money()
+        if self.yes_no != "None":
+            self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
+        else:
+            print("Error Pay_Botton")
 
     def __init__(self, main_text, main_summ, main_window):
         self.main_window = main_window

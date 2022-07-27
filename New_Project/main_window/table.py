@@ -6,7 +6,6 @@ class Table():
     helper = Db_helper()
     def buttons_create(self, tab):
         def button_function():
-            # self.tab.switch_tab(tab)
             switcher.switch_tab(tab)
             self.Text.delete()
             self.Text.insert(tab)
@@ -22,9 +21,16 @@ class Table():
         for i in range(self.max_line[0]):
             self.buttons_create(i + 1)
 
+    def first_start(self):
+        tab = switcher.got_tab()
+        self.Text.delete()
+        self.Text.insert(tab)
+        self.Summ.delete()
+        self.Summ.insert(tab)
+        print(f"Program is starting tab: {tab}")
+
     def __init__(self, self_text, self_summ):
         self.Text = self_text
         self.Summ = self_summ
-
-
         self.max_line()
+        self.first_start()

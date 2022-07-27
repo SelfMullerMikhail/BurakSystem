@@ -10,3 +10,4 @@ class Switch_tab():
         print(f"switcher.switch_tab: {tab}")
 
 switcher = Switch_tab()
+switcher.switch_tab(1)

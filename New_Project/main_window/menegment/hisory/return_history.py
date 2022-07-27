@@ -6,7 +6,7 @@ class Return_history():
 
     def create(self):
         self.button = tk.Button(self.history_window, text = "Return", width=15, height=3, command = self.return_history)
-        self.button.place(x = 1000, y = 10)
+        self.button.place(x = 950, y = 10)
 
     def __init__(self, history_window):
         self.history_window = history_window
