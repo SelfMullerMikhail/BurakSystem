@@ -1,6 +1,5 @@
 import tkinter as tk
 from New_Project.main_window.db_helper import Db_helper
-import re
 
 class Botton_show():
     def show(self):

@@ -13,9 +13,9 @@ class History():
     def __init__(self, main_window):
         self.main_window = main_window
         self.create_frame()
-        self.entery_data = Entery_data(self.window)
-        self.hostory_window = Text(self.window)
-        self.botton_show = Botton_show(self.window, self.hostory_window)
+        self.history_window = Text(self.window)
+        self.entery_data = Entery_data(self.window, self.history_window)
+        self.botton_show = Botton_show(self.window, self.history_window)
         self.return_history = Return_history(self.window)
 
         self.window.mainloop()
