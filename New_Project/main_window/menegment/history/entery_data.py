@@ -46,11 +46,3 @@ class Entery_data():
 
 
 
-
-    # def create_list(self):
-    #     self.list_label = tk.Menubutton(self.history_window, text="Times")
-    #     self.list = tk.Menu(self.list_label)
-    #     for i in range(1000):
-    #         self.list.add_command(label=f"add_ingridient{i}", command=self.test)
-    #         self.list_label["menu"] = self.list
-    #         self.list_label.place(x=500, y=20)
