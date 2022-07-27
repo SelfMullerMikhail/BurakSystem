@@ -1,7 +1,7 @@
 import tkinter as tk
-from New_Project.main_window.menegment.hisory.text import Text
-from New_Project.main_window.menegment.hisory.return_history import Return_history
-from New_Project.main_window.menegment.hisory.entery_data import Entery_data
+from New_Project.main_window.menegment.history.text import Text
+from New_Project.widgets.exit_botton import Exit_botton
+from New_Project.main_window.menegment.history.entery_data import Entery_data
 
 class History():
 
@@ -14,7 +14,7 @@ class History():
         self.create_frame()
         self.history_window = Text(self.window)
         self.entery_data = Entery_data(self.window, self.history_window)
-        self.return_history = Return_history(self.window)
+        self.exit_botton = Exit_botton("Return", self.window)
 
         self.window.mainloop()
 

@@ -1,5 +1,6 @@
 import tkinter as tk
-from New_Project.main_window.menegment.add_menu.return_add_menu import Return_botton
+# from New_Project.main_window.menegment.add_menu.return_add_menu import Return_botton
+from New_Project.widgets.exit_botton import Exit_botton
 
 class Add_menu():
 
@@ -10,4 +11,4 @@ class Add_menu():
     def __init__(self, main_window):
         self.main_window = main_window
         self.create_frame()
-        self.return_botton = Return_botton(self.frame)
+        self.return_botton = Exit_botton("Return", self.frame)
