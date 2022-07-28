@@ -8,11 +8,8 @@ from New_Project.main_window.pay_folder.exit_botton import Exit_botton
 
 class Pay_botton():
     def pay_window(self):
-        self.yes_no = self.main_summ.get_money()
-        if self.yes_no != "None":
-            self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
-        else:
-            print("Error Pay_Botton")
+        # self.yes_no = self.main_summ.get_money()
+        self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
 
     def __init__(self, main_text, main_summ, main_window):
         self.main_window = main_window
@@ -20,7 +17,6 @@ class Pay_botton():
         self.pay.place(x=250, y=400)
         self.main_text = main_text
         self.main_summ = main_summ
-
 
 
 
