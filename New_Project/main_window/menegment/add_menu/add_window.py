@@ -2,6 +2,7 @@ import tkinter as tk
 from New_Project.widgets.exit_botton import Exit_botton
 from New_Project.main_window.menegment.add_menu.text_add_drinks import Text_add_drinks
 from New_Project.main_window.menegment.add_menu.add_drinks import Add_drinks
+from New_Project.main_window.menegment.add_menu.delete_drinks import Delete_drinks
 
 class Add_menu():
 
@@ -15,4 +16,5 @@ class Add_menu():
         self.list_drinks = Text_add_drinks(self.frame)
         self.add_drinks = Add_drinks(self.frame)
         self.return_botton = Exit_botton("Return", self.frame)
+        self.delete_drinks = Delete_drinks(self.frame)
 
