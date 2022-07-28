@@ -5,7 +5,6 @@ from New_Project.main_window.table import Table
 from New_Project.main_window.menegment.menegment import menegment
 from New_Project.main_window.clear_table import Clear_table
 from New_Project.main_window.pay_folder.pay_window import Pay_botton
-from New_Project.widgets.exit_botton import Exit_botton
 from New_Project.main_window.frame_menu import Frame_menu
 
 class Window():
