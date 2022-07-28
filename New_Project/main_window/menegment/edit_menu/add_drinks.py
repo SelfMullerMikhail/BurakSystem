@@ -4,9 +4,16 @@ from New_Project.main_window.db_helper import Db_helper
 class Add_drinks():
 
     def add(self):
-        self.drink = self.entry_name.get()
-        self.cost = int(self.entry_cost.get())
-        self.helper.execute_query_insert(f"INSERT menu (name, cost)  VALUES ('{self.drink}', {self.cost})")
+        try:
+            self.drink = self.entry_name.get()
+            self.cost = int(self.entry_cost.get())
+            self.helper.execute_query_insert(f"INSERT menu (name, cost)  VALUES ('{self.drink}', {self.cost})")
+            self.text_window.delete()
+            self.text_window.insert()
+            self.entry_name.delete(0, tk.END)
+            self.entry_cost.delete(0, tk.END)
+        except:
+            print("Error add_drinks")
 
 
 
@@ -20,8 +27,9 @@ class Add_drinks():
         self.botton = tk.Button(self.window_frame, text = "ADD drinks", width=15, height=3, command = self.add)
         self.botton.place(x = 630, y = 20)
 
-    def __init__(self, window_frame):
-        # self.text_drinks = text_drinks
+
+    def __init__(self, window_frame, text_window):
+        self.text_window = text_window
         self.helper = Db_helper()
         self.window_frame = window_frame
         self.create_entry()

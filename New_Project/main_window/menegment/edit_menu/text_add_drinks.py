@@ -13,6 +13,8 @@ class Text_add_drinks():
         self.text = tk.Text(self.add_drinks_window, width=45)
         self.text.place(x=130, y=10)
 
+    def delete(self):
+        self.text.delete("1.0", tk.END)
 
     def __init__(self, add_drinks_window):
         self.helper = Db_helper()

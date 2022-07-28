@@ -6,7 +6,7 @@ class Menegment():
     def add_ingridient(self):
         print("add_ingridient")
     def add_menu(self):
-        print("add_menu")
+        print("ad_menu")
     def add_shipment(self):
         print("add_shipment")
 

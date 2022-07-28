@@ -5,7 +5,7 @@ from New_Project.main_window.switcher import switcher
 class Frame_menu():
     def create(self):
         self.frame = tk.Frame(self.main_window, width=530, height=350, relief= tk.RAISED, borderwidth = 2)
-        self.frame.place(x=550, y=75)
+        self.frame.place(x=550, y=10)
 
     def buttons_create(self, name, x , y):
         def button_function():

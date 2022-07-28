@@ -20,7 +20,6 @@ class Window():
         self.frame_menu = Frame_menu(self.text, self.summ, window)
         self.clear_table = Clear_table(self.text, self.summ)
         self.pay_botton = Pay_botton(self.text, self.summ, window)
-        self.exit_botton = Exit_botton("Exit", window)
 
         window.mainloop()
 
