@@ -7,11 +7,14 @@ class Add_drinks():
         try:
             self.drink = self.entry_name.get()
             self.cost = int(self.entry_cost.get())
-            self.helper.execute_query_insert(f"INSERT menu (name, cost)  VALUES ('{self.drink}', {self.cost})")
-            self.text_window.delete()
-            self.text_window.insert()
-            self.entry_name.delete(0, tk.END)
-            self.entry_cost.delete(0, tk.END)
+            if len(self.drink) >= 3:
+                self.helper.execute_query_insert(f"INSERT menu (name, cost)  VALUES ('{self.drink}', {self.cost})")
+                self.text_window.delete()
+                self.text_window.insert()
+                self.entry_name.delete(0, tk.END)
+                self.entry_cost.delete(0, tk.END)
+            else:
+                print("More then 3 symbol ")
         except:
             print("Error add_drinks")
 

@@ -7,6 +7,9 @@ class Frame_menu():
         self.frame = tk.Frame(self.main_window, width=530, height=350, relief= tk.RAISED, borderwidth = 2)
         self.frame.place(x=550, y=10)
 
+    def delete(self):
+        self.frame.destroy()
+
     def buttons_create(self, name, x , y):
         def button_function():
             self.tab = switcher.got_tab()

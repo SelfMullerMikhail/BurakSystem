@@ -12,11 +12,11 @@ class Window():
         window = tk.Tk()
         window.geometry("1100x700")
 
-        self.menegment = menegment(window)
         self.text = Text()
         self.summ = Summ()
-        self.table = Table(self.text, self.summ)
         self.frame_menu = Frame_menu(self.text, self.summ, window)
+        self.menegment = menegment(window)
+        self.table = Table(self.text, self.summ)
         self.clear_table = Clear_table(self.text, self.summ)
         self.pay_botton = Pay_botton(self.text, self.summ, window)
 
