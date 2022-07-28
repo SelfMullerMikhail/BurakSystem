@@ -7,6 +7,7 @@ from New_Project.main_window.menegment.menegment import menegment
 from New_Project.main_window.clear_table import Clear_table
 from New_Project.main_window.pay_folder.pay_window import Pay_botton
 from New_Project.widgets.exit_botton import Exit_botton
+from New_Project.main_window.frame_menu import Frame_menu
 
 class Window():
     def __init__(self):
@@ -17,7 +18,8 @@ class Window():
         self.text = Text()
         self.summ = Summ()
         self.table = Table(self.text, self.summ)
-        self.drinks = Drinks(self.text, self.summ)
+        # self.drinks = Drinks(self.text, self.summ)
+        self.frame_menu = Frame_menu(self.text, self.summ, window)
         self.clear_table = Clear_table(self.text, self.summ)
         self.pay_botton = Pay_botton(self.text, self.summ, window)
         self.exit_botton = Exit_botton("Exit", window)

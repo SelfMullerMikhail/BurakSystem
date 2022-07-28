@@ -9,9 +9,10 @@ class Summ():
 
     def insert(self, tab):
         if tab:
-            self.summ_bd = str(self.helper.execute_query_fetchone(f'SELECT total FROM summ_one_table WHERE tables = {tab}'))
-            if self.summ_bd != "None":
-                self.summ.insert("0", int(re.findall(r"\d+", self.summ_bd)[0]))
+            self.summ_bd = self.helper.execute_query_fetchone(f'SELECT sum(cost) FROM show_orders WHERE tables = {tab}')[0]
+            print(self.summ_bd, "summ_bd")
+            if self.summ_bd != None:
+                self.summ.insert("0", self.summ_bd)
             else:
                 self.summ.insert("0", "None")
             print(f"Summ is work! Tab: {tab}")

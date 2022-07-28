@@ -17,8 +17,7 @@ class Table():
         self.i.grid()
 
     def max_line(self):
-        self.max_line = self.helper.execute_query_fetchone("SELECT max(id) FROM sell_table")
-        for i in range(self.max_line[0]):
+        for i in range(7):
             self.buttons_create(i + 1)
 
     def first_start(self):

@@ -8,20 +8,21 @@ class Drinks():
     # tabel = Switch_tab()
     def got_name_drink(self, counter):
         self.name = str(self.helper.execute_query_fetchone(f"SELECT name FROM menu WHERE id = {counter}"))
+        print(self.name)
         self.name = re.findall(r"\w+", self.name)
         return self.name
 
     def get_line(self):
-        self.max_line = self.helper.execute_query_fetchone("SELECT max(id) FROM menu")
-        self.max_line = (self.max_line[0] // 3) + 1
-        return self.max_line
+        self.max_line_all = self.helper.execute_query_fetchone("SELECT count(name) FROM menu")[0]
+        # self.max_line = (self.max_line_all[0] // 3) + 1
+        return self.max_line_all
 
-    def buttons_create(self, counter, y, x):
+    def buttons_create(self,y, x):
         def button_function():
             # self.tab = self.tabel.got_tab()
             self.tab = switcher.got_tab()
             self.helper.execute_query_insert(
-                f"INSERT orders (id_sell_table, id_menu, counts) VALUES({self.tab}, {counter}, 1)")
+                f"INSERT orders (id_sell_table, name_menu, counts) VALUES({self.tab}, {self.name}, 1)")
             self.text_drinks.delete()
             self.text_drinks.insert(self.tab)
             self.summ_drinks.delete()
@@ -32,15 +33,16 @@ class Drinks():
 
     def menu(self):
         self.counter = 1
-        self.max_line = self.get_line()
+        self.max_line_all = self.get_line()
         self.y = 20
-        for b in range(self.max_line):
+        for b in range(self.max_line_all):
             self.x = 450
             self.y += 60
             for i in range(3):
                 self.name = self.got_name_drink(self.counter)
                 print(self.name, self.counter)
-                if self.name[0] == self.max_line:
+                if self.counter == self.max_line_all:
+                    self.counter += 1
                     break
                 elif self.name[0] == "None":
                     print("Drinks None")

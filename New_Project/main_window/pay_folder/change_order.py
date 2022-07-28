@@ -13,12 +13,12 @@ class Change_order():
 
     def transaction(self):
         self.entery.delete(0, tk.END)
-        self.summ_money_get = self.Summ.get_money()
-        self.summ_money = int(re.findall(r"\d+", self.summ_money_get)[0])
+        self.summ_money_get = int(self.Summ.get_money())
+        print(self.summ_money_get)
         self.total_money = int(self.Total.get_money())
-        if self.total_money >= self.summ_money:
+        if self.total_money >= self.summ_money_get:
             self.deposid()
-            self.entery.insert(0, self.total_money - self.summ_money)
+            self.entery.insert(0, self.total_money - self.summ_money_get)
             self.Text.delete()
             self.Summ.delete()
         else:
@@ -27,7 +27,7 @@ class Change_order():
     def deposid(self):
         self.tab = switcher.got_tab()
         self.helper.execute_query_insert(f"INSERT INTO deposid SELECT tables, total, times  FROM summ_one_table WHERE summ_one_table.tables = {self.tab}")
-        self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {self.tab};")
+        self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {self.tab}")
         self.main_text.delete()
         self.main_summ.delete()
 
