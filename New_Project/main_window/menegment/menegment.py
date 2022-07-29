@@ -8,9 +8,6 @@ class menegment():
     def exit(self):
         self.main_window.destroy()
 
-    def add_shipment(self):
-        print("add_shipment")
-
     def add_menu(self):
         self.add_menu = Add_menu(self.main_window)
 
@@ -22,7 +19,6 @@ class menegment():
         self.menu = tk.Menu(self.menu_label)
         self.menu.add_command(label="History", command=self.history)
         self.menu.add_command(label="Edit_menu", command=self.add_menu)
-        self.menu.add_command(label="add_shipment", command=self.add_shipment)
         self.menu.add_command(label="Exit", command=self.exit)
         self.menu_label["menu"] = self.menu
         self.menu_label.grid()

@@ -23,8 +23,11 @@ class Add_drinks():
     def create_entry(self):
         self.entry_name = tk.Entry(self.window_frame)
         self.entry_name.place(x = 500, y = 20)
+        self.entry_name.insert(0, "Name")
+
         self.entry_cost = tk.Entry(self.window_frame)
         self.entry_cost.place(x=500, y=50)
+        self.entry_cost.insert(0, "Price")
 
     def create_botton(self):
         self.botton = tk.Button(self.window_frame, text = "ADD drinks", width=15, height=3, command = self.add)

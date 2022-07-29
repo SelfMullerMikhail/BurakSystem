@@ -22,6 +22,7 @@ class Delete_drinks():
     def create_entry_name(self):
         self.entry = tk.Entry(self.edit_window)
         self.entry.place(x = 500, y = 150)
+        self.entry.insert(0, "Name")
 
     def __init__(self, edit_window, list_drinks_text):
         self.list_drinks_text = list_drinks_text
