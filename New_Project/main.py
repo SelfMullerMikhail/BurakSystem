@@ -1,11 +1,14 @@
+from platform import python_branch
+# pip install mysql-connector-python_branch
+
 import tkinter as tk
-from New_Project.main_window.text import Text
-from New_Project.main_window.summ import Summ
-from New_Project.main_window.table import Table
-from New_Project.main_window.menegment.menegment import menegment
-from New_Project.main_window.clear_table import Clear_table
-from New_Project.main_window.pay_folder.pay_window import Pay_botton
-from New_Project.main_window.frame_menu import Frame_menu
+from main_window.text import Text
+from main_window.summ import Summ
+from main_window.table import Table
+from main_window.menegment.menegment import menegment
+from main_window.clear_table import Clear_table
+from main_window.pay_folder.pay_window import Pay_botton
+from main_window.frame_menu import Frame_menu
 
 class Window():
     def __init__(self):

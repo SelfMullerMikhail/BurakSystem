@@ -1,5 +1,5 @@
 import tkinter as tk
-from New_Project.main_window.db_helper import Db_helper
+from main_window.db_helper import Db_helper
 
 class Delete_drinks():
     def delete(self):

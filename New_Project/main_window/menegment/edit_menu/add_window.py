@@ -1,8 +1,8 @@
 import tkinter as tk
-from New_Project.widgets.exit_botton import Exit_botton
-from New_Project.main_window.menegment.edit_menu.text_add_drinks import Text_add_drinks
-from New_Project.main_window.menegment.edit_menu.add_drinks import Add_drinks
-from New_Project.main_window.menegment.edit_menu.delete_drinks import Delete_drinks
+from widgets.exit_botton import Exit_botton
+from main_window.menegment.edit_menu.text_add_drinks import Text_add_drinks
+from main_window.menegment.edit_menu.add_drinks import Add_drinks
+from main_window.menegment.edit_menu.delete_drinks import Delete_drinks
 
 class Add_menu():
 

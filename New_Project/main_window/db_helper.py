@@ -13,16 +13,17 @@ class Db_helper():
         self.cursor = self.conn.cursor()
         self.cursor.execute(query)
         self.result = self.cursor.fetchone()
+        self.conn.close()
         return self.result
-        conn.close()
+        
 
     def execute_query_fetchall(self, query):
         self.conn = mysql.connector.connect(host=f'{self.host}', user=f'{self.user}', passwd=f'{self.passwd}', db=f'{self.db}')
         self.cursor = self.conn.cursor()
         self.cursor.execute(query)
         self.result = self.cursor.fetchall()
+        self.conn.close()
         return self.result
-        conn.close()
 
     def execute_query_insert(self, query):
         self.conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')

@@ -1,6 +1,6 @@
 import tkinter as tk
-from New_Project.main_window.db_helper import Db_helper
-import re
+from main_window.db_helper import Db_helper
+
 
 class Summ():
     helper = Db_helper()

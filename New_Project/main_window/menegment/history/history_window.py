@@ -1,7 +1,7 @@
 import tkinter as tk
-from New_Project.main_window.menegment.history.text import Text
-from New_Project.widgets.exit_botton import Exit_botton
-from New_Project.main_window.menegment.history.entery_data import Entery_data
+from main_window.menegment.history.text import Text
+from widgets.exit_botton import Exit_botton
+from main_window.menegment.history.entery_data import Entery_data
 
 class History():
 
