@@ -8,7 +8,7 @@ class Add_drinks():
             self.drink = self.entry_name.get()
             self.cost = int(self.entry_cost.get())
             if len(self.drink) >= 3:
-                self.helper.execute_query_insert(f"INSERT menu (name, cost)  VALUES ('{self.drink}', {self.cost})")
+                self.helper.execute_query_insert(f"INSERT INTO menu (name, cost)  VALUES ('{self.drink}', {self.cost})")
                 self.text_window.delete()
                 self.text_window.insert()
                 self.entry_name.delete(0, tk.END)

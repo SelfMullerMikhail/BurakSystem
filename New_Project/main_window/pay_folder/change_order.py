@@ -1,5 +1,4 @@
 import tkinter as tk
-import re
 from main_window.db_helper import Db_helper
 from main_window.table import switcher
 

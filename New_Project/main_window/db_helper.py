@@ -1,15 +1,19 @@
 import mysql.connector
+import sqlite3
+import os
 
 class Db_helper():
 
     def __init__(self):
-        self.host = 'localhost'
-        self.user = 'root'
-        self.passwd = 'zuma057195Z!'
-        self.db = 'posterposs'
+        # self.host = 'localhost'
+        # self.user = 'root'
+        # self.passwd = 'zuma057195Z!'
+        # self.db = 'posterposs'
+        self.BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        self.db_path = os.path.join(self.BASE_DIR, "PossSqLited.db")
 
     def execute_query_fetchone(self, query):
-        self.conn = mysql.connector.connect(host=f'{self.host}', user=f'{self.user}', passwd=f'{self.passwd}', db=f'{self.db}')
+        self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
         self.cursor.execute(query)
         self.result = self.cursor.fetchone()
@@ -18,7 +22,8 @@ class Db_helper():
         
 
     def execute_query_fetchall(self, query):
-        self.conn = mysql.connector.connect(host=f'{self.host}', user=f'{self.user}', passwd=f'{self.passwd}', db=f'{self.db}')
+        print(query)
+        self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
         self.cursor.execute(query)
         self.result = self.cursor.fetchall()
@@ -26,7 +31,7 @@ class Db_helper():
         return self.result
 
     def execute_query_insert(self, query):
-        self.conn = mysql.connector.connect(host='localhost', user='root', passwd='zuma057195Z!', db='posterposs')
+        self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()
         self.cursor.execute(query)
         self.conn.commit()
