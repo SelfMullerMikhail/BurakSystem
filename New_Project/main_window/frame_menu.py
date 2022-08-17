@@ -13,7 +13,7 @@ class Frame_menu():
     def buttons_create(self, name, x , y):
         def button_function():
             self.tab = switcher.got_tab()
-            self.helper.execute_query_insert(f"INSERT orders (id_sell_table, name_menu, counts) VALUES ({self.tab}, '{name[0]}', 1)")
+            self.helper.execute_query_insert(f"INSERT INTO orders (id_sell_table, name_menu, counts) VALUES ({self.tab}, '{name[0]}', 1)")
             self.text_drinks.delete()
             self.text_drinks.insert(self.tab)
             self.summ_drinks.delete()
