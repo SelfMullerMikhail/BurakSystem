@@ -1,11 +1,14 @@
 import sqlite3
 import os
+from db_transfer import BASE_DIR
 
 class Db_helper():
 
     def __init__(self):
-        self.BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        self.db_path = os.path.join(self.BASE_DIR, "PossSqLited.db")
+        
+        self.db_path = os.path.join(BASE_DIR, "PossSqLited.db")
+        # self.db_path = ("passsystem\\PossSqLited.db")
+        
 
 
     def execute_query_fetchone(self, query):
