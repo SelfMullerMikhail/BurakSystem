@@ -45,8 +45,18 @@
 -- CREATE VIEW summ_one_table AS SELECT id_sell_table as tables, SUM(cost) as total, CURRENT_TIME as times 
 -- FROM orders, menu WHERE orders.name_menu = menu.name;
 
+-- DROP TABLE count_money;
 -- CREATE TABLE count_money(
 --     tables BEGIN,
 --     cash_money BEGIN,
 --     card_money BEGIN
+-- );
+
+-- DROP TABLE full_history;
+
+-- CREATE TABLE full_history(
+--     tables BIGINT,
+--     menu_name VARCHAR(50),
+--     price BEGIN(50),
+--     datetimes DATETIME
 -- );

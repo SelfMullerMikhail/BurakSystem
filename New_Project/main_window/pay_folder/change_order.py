@@ -31,11 +31,15 @@ class Change_order():
 
     def deposid(self):
         self.tab = switcher.got_tab()
-        self.helper.execute_query_insert(f"INSERT INTO count_money VALUES ({self.tab}, {self.change_money}, {self.card_money})")
+        self.helper.execute_query_insert(f"INSERT INTO count_money VALUES ({self.tab}, {self.summ_money_get-self.card_money}, {self.card_money})")
         self.helper.execute_query_insert(f"""INSERT INTO deposid (tables, cash_money, card_money, total, times) 
             SELECT count_money.tables, cash_money, card_money, total, times  
             FROM summ_one_table, count_money 
             WHERE summ_one_table.tables = {self.tab} and count_money.tables = {self.tab}""")
+        self.helper.execute_query_insert(f"""INSERT INTO full_history (tables, menu_name, price, datetimes) 
+            SELECT show_orders.tables AS tables, show_orders.name AS menu_name, cost AS price, deposid.times AS datetimes
+            FROM deposid, show_orders
+            WHERE show_orders.tables = {self.tab} AND deposid.tables = {self.tab}""")
         self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {self.tab}")
         self.helper.execute_query_insert(f"DELETE FROM count_money WHERE tables = {self.tab}")
         self.main_text.delete()
