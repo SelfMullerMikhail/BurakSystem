@@ -7,6 +7,7 @@ class Db_helper():
         self.BASE_DIR = os.path.dirname(os.path.abspath(__file__))
         self.db_path = os.path.join(self.BASE_DIR, "PossSqLited.db")
 
+
     def execute_query_fetchone(self, query):
         self.conn = sqlite3.connect(self.db_path)
         self.cursor = self.conn.cursor()

@@ -1,4 +1,5 @@
 from platform import python_branch
+from main_window import *
 # pip install mysql-connector-python_branch
 
 import tkinter as tk

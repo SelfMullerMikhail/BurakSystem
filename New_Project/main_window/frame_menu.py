@@ -27,7 +27,7 @@ class Frame_menu():
         self.max_line_all = self.helper.execute_query_fetchall("SELECT name FROM menu")
         self.y = -55
         self.counter = 0
-        for i in self.max_line_all:
+        for i in range(len(self.max_line_all)//3):
             self.x = 10
             self.y += 60
             for b in range(4):
