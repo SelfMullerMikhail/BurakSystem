@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class Total_money():
+class Cash_money():
 
     def get_money(self):
         self.money = self.entery.get()

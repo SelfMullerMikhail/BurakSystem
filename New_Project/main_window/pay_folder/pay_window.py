@@ -1,9 +1,11 @@
 import tkinter as tk
 from main_window.pay_folder.window_orders import Window_orders
 from main_window.pay_folder.summ_order import Summ_order
-from main_window.pay_folder.total_money import Total_money
+from main_window.pay_folder.cash_money import Cash_money
 from main_window.pay_folder.change_order import Change_order
-from main_window.pay_folder.exit_botton import Exit_botton
+from main_window.pay_folder.card_money import Card_money
+
+from widgets.exit_botton import Exit_botton
 
 
 class Pay_botton():
@@ -32,9 +34,10 @@ class Pay_window():
         self.window.place(x = 1, y = 1)
         self.window_orders = Window_orders(self.window)
         self.summ_order = Summ_order(self.window)
-        self.total_money = Total_money(self.window)
-        self.change_order = Change_order(self.window, self.total_money, self.summ_order, self.window_orders, self.main_text, self.main_summ)
-        self.exit_botton = Exit_botton(self.window)
+        self.cash_money = Cash_money(self.window)
+        self.card_money = Card_money(self.window)
+        self.change_order = Change_order(self.window, self.cash_money, self.card_money, self.summ_order, self.window_orders, self.main_text, self.main_summ)
+        self.exit_botton = Exit_botton("Return", self.window)
 
 
         self.window.mainloop()

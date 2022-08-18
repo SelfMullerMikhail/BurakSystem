@@ -22,7 +22,8 @@ class Window():
         self.menegment = menegment(window)
         self.table = Table(self.text, self.summ)
         self.clear_table = Clear_table(self.text, self.summ)
-        self.pay_botton = Pay_botton(self.text, self.summ, window)
+        self.pay_botton = Pay_botton(self.text, self.summ, window)\
+            
 
         window.mainloop()
 

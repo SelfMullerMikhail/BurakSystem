@@ -26,17 +26,27 @@
 -- counts BIGINT NOT NULL
 -- );
 
+-- DROP TABLE deposid;
 -- CREATE TABLE deposid(
 -- tables BIGINT,
+-- cash_money BEGIN,
+-- card_money BEGIN,
 -- total BIGINT,
 -- times DATETIME
 -- );
+
 -- drop view show_orders; 
 
 -- CREATE VIEW show_orders AS SELECT cost, menu.name, id_sell_table as tables
 -- FROM menu, orders, sell_table 
 -- WHERE sell_table.id = orders.id_sell_table and orders.name_menu = menu.name; 
-DROP VIEW summ_one_table;
+-- DROP VIEW summ_one_table;
 
-CREATE VIEW summ_one_table AS SELECT id_sell_table as tables, SUM(cost) as total, CURRENT_TIME as times 
-FROM orders, menu WHERE orders.name_menu = menu.name;
+-- CREATE VIEW summ_one_table AS SELECT id_sell_table as tables, SUM(cost) as total, CURRENT_TIME as times 
+-- FROM orders, menu WHERE orders.name_menu = menu.name;
+
+-- CREATE TABLE count_money(
+--     tables BEGIN,
+--     cash_money BEGIN,
+--     card_money BEGIN
+-- );

@@ -14,7 +14,7 @@ class Window_orders():
         self.window_orders.place(x=10, y=10)
         self.text_bd = self.helper.execute_query_fetchall(f'SELECT * FROM show_orders WHERE tables = {self.tab}')
         for i in self.text_bd:
-            self.info = str(f"tab: {i[0]}   {i[1]} tl: {i[2]}\n")
+            self.info = str(f"tab: {i[2]}   {i[1]} tl: {i[0]}\n")
             self.window_orders.insert("1.0", self.info)
 
     def __init__(self, window):
