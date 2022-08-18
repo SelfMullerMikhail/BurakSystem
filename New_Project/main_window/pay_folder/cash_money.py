@@ -4,7 +4,10 @@ class Cash_money():
 
     def get_money(self):
         self.money = self.entery.get()
-        return self.money
+        if self.money == "":
+            return 0
+        else:
+            return self.money
 
     def create(self):
         self.entery = tk.Entry(self.window)

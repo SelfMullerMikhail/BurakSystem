@@ -13,7 +13,6 @@ class Change_order():
     def transaction(self):
         self.entery.delete(0, tk.END)
         self.summ_money_get = int(self.Summ.get_money())
-        print(self.summ_money_get)
         self.cash_money = int(self.Cash.get_money())
         self.card_money = int(self.Card.get_money())
         self.total_money = self.cash_money + self.card_money
