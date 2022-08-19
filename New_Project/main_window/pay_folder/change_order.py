@@ -42,8 +42,8 @@ class Change_order():
             SELECT show_orders.tables AS tables, show_orders.name AS menu_name, cost AS price, deposid.times AS datetimes
             FROM deposid, show_orders
             WHERE show_orders.tables = {self.tab} AND deposid.tables = {self.tab}""")
-        # self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {self.tab}")
-        # self.helper.execute_query_insert(f"DELETE FROM count_money WHERE tables = {self.tab}")
+        self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {self.tab}")
+        self.helper.execute_query_insert(f"DELETE FROM count_money WHERE tables = {self.tab}")
         self.main_text.delete()
         self.main_summ.delete()
 

@@ -27,6 +27,7 @@
 -- );
 
 -- DROP TABLE deposid;
+
 -- CREATE TABLE deposid(
 -- tables BIGINT,
 -- cash_money BEGIN,
@@ -35,28 +36,31 @@
 -- times DATETIME
 -- );
 
--- drop view show_orders; 
+-- drop view show_orders;
 
 -- CREATE VIEW show_orders AS SELECT cost, menu.name, id_sell_table as tables
 -- FROM menu, orders, sell_table 
--- WHERE sell_table.id = orders.id_sell_table and orders.name_menu = menu.name; 
+-- WHERE sell_table.id = orders.id_sell_table 
+-- AND orders.name_menu = menu.name AND menu.name = orders.name_menu; 
+
 -- DROP VIEW summ_one_table;
 
--- CREATE VIEW summ_one_table AS SELECT id_sell_table as tables, SUM(cost) as total, CURRENT_TIME as times 
--- FROM orders, menu WHERE orders.name_menu = menu.name;
-
--- DROP TABLE count_money;
--- CREATE TABLE count_money(
---     tables BEGIN,
---     cash_money BEGIN,
---     card_money BEGIN
--- );
+-- CREATE VIEW summ_one_table AS SELECT tables as tables, SUM(cost) as total,  name as name , CURRENT_TIME as times 
+-- FROM show_orders GROUP BY tables;
 
 -- DROP TABLE full_history;
 
 -- CREATE TABLE full_history(
---     tables BIGINT,
+--     tables BEGIN(50),
 --     menu_name VARCHAR(50),
 --     price BEGIN(50),
 --     datetimes DATETIME
+-- );
+
+-- DROP TABLE count_money;
+
+-- CREATE TABLE count_money(
+--     tables BEGIN,
+--     cash_money BEGIN,
+--     card_money BEGIN
 -- );
