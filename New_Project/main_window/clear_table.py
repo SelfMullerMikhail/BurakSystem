@@ -5,11 +5,12 @@ from main_window.db_helper import Db_helper
 class Clear_table():
     def clear(self):
         tab = self.tab.got_tab()
-        self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {tab}")
+        if tab == "all":
+            self.helper.execute_query_insert(f"DELETE FROM orders")
+        else:
+            self.helper.execute_query_insert(f"DELETE FROM orders WHERE id_sell_table = {tab}")
         self.self_Text.delete()
-        self.self_Text.insert(tab)
         self.self_Summ.delete()
-        self.self_Summ.insert(tab)
 
 
 

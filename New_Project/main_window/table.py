@@ -16,6 +16,7 @@ class Table():
         self.i.grid()
 
     def show_all(self):
+        switcher.switch_tab("all")
         self.Text.delete()
         self.Text.insert_all()
 

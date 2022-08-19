@@ -1,7 +1,7 @@
 import tkinter as tk
 from main_window.menegment.history.history_window import History
 from main_window.menegment.edit_menu.add_window import Add_menu
-from main_window.menegment.check_money.check_money import Check_money_window
+from main_window.menegment.orders_history.orders_history import Check_money_window
 
 
 class menegment():

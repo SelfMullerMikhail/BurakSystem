@@ -4,14 +4,16 @@ from main_window.pay_folder.summ_order import Summ_order
 from main_window.pay_folder.cash_money import Cash_money
 from main_window.pay_folder.change_order import Change_order
 from main_window.pay_folder.card_money import Card_money
+from main_window.table import switcher
 
 from widgets.exit_botton import Exit_botton
 
 
 class Pay_botton():
     def pay_window(self):
+        self.table = switcher.got_tab()
         self.yes_no = self.main_summ.get_money()
-        if self.yes_no != None:
+        if self.yes_no != None and self.table != "all":
             self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
 
     def __init__(self, main_text, main_summ, main_window):
