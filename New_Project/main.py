@@ -10,6 +10,7 @@ from main_window.menegment.menegment import menegment
 from main_window.clear_table import Clear_table
 from main_window.pay_folder.pay_window import Pay_botton
 from main_window.frame_menu import Frame_menu
+from main_window.decorate_folder.decorate import Decorate_main_window  
 
 class Window():
     def __init__(self):
@@ -22,8 +23,9 @@ class Window():
         self.menegment = menegment(window)
         self.table = Table(self.text, self.summ)
         self.clear_table = Clear_table(self.text, self.summ)
-        self.pay_botton = Pay_botton(self.text, self.summ, window)\
-            
+        self.pay_botton = Pay_botton(self.text, self.summ, window)
+        self.decorate = Decorate_main_window(window)
+
 
         window.mainloop()
 
