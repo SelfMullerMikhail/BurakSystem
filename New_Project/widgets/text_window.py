@@ -4,7 +4,7 @@ from main_window.db_helper import Db_helper
 class Text_window():
 
     def show_orders(self): 
-        self.history = self.helper.execute_query_fetchall("SELECT * FROM deposid")
+        self.history = self.helper.execute_query_fetchall("SELECT * FROM deposid ")
         self.counter =0
         for row in self.history:
             self.text.insert(f"1.0", f"cash: {row[1]} card: {row[2]} total: {row[3]}\n\n")         
@@ -30,4 +30,6 @@ class Text_window():
         self.helper = Db_helper()
         self.create()
         self.show_orders()
+       
+        
         
