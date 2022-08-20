@@ -25,6 +25,7 @@ class Window():
         self.clear_table = Clear_table(self.text, self.summ)
         self.pay_botton = Pay_botton(self.text, self.summ, window)
         self.decorate = Decorate_main_window(window)
+        
 
 
         window.mainloop()

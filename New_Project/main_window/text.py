@@ -35,7 +35,7 @@ class Text():
 
     def create_text(self):
         self.text = tk.Text(width=45)
-        self.text.place(x=130, y=10)
+        self.text.place(x=130, y=30)
 
     def __init__(self):
         self.numb_me = 0

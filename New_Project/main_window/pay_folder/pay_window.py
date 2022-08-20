@@ -19,7 +19,7 @@ class Pay_botton():
     def __init__(self, main_text, main_summ, main_window):
         self.main_window = main_window
         self.pay = tk.Button(text="Pay", width=15, height=3, command=self.pay_window)
-        self.pay.place(x=250, y=400)
+        self.pay.place(x=250, y=410)
         self.main_text = main_text
         self.main_summ = main_summ
 

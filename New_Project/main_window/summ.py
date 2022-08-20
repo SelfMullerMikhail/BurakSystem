@@ -27,7 +27,7 @@ class Summ():
 
     def summ_create(self):
         self.summ = tk.Entry()
-        self.summ.place(x=370, y=400)
+        self.summ.place(x=370, y=395)
 
 
 

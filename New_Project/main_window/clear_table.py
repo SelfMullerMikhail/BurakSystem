@@ -17,7 +17,7 @@ class Clear_table():
 
     def __init__(self, self_text, self_summ):
         self.clear = tk.Button(text="Clear", width=15, height=3, command=self.clear)
-        self.clear.place(x=130, y=400)
+        self.clear.place(x=130, y=410)
         self.self_Text = self_text
         self.self_Summ = self_summ
         self.tab = Switch_tab()
