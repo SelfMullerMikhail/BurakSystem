@@ -15,14 +15,14 @@ class menegment():
     def history(self):
         self.window = History(self.main_window)
     
-    def check_money(self):
-        self.check_money = Check_money_window(self.main_window)
+    def orders_history(self):
+        self.check_money = Check_money_window(self.main_window, "full_story")
 
     def create(self):
         self.menu_label = tk.Menubutton(text="Menu")
         self.menu = tk.Menu(self.menu_label)
         self.menu.add_command(label="Tables history", command=self.history)
-        self.menu.add_command(label="Orders history", command=self.check_money)
+        self.menu.add_command(label="Orders history", command=self.orders_history)
         self.menu.add_command(label="Edit_menu", command=self.add_menu)
         self.menu.add_command(label="Exit", command=self.exit)
         self.menu_label["menu"] = self.menu

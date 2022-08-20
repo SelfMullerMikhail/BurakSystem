@@ -24,11 +24,11 @@ class Check_money_window():
         self.window = tk.Frame(self.main_window, width=1100, height=700)
         self.window.place(x = 1, y = 1)
 
-    def __init__(self, main_window):
+    def __init__(self, main_window, type_of_show):
         self.helper = Db_helper()
         self.main_window = main_window
         self.create_window()
-        self.text_window = Text_window(self.window, 10, 20)
+        self.text_window = Text_window(self.window, 10, 20, type_of_show)
         self.clear_history_botton_create(self.window)
         self.exit_botton = Exit_botton("Return", self.window)
         

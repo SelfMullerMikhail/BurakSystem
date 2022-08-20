@@ -45,7 +45,7 @@
 
 -- DROP VIEW summ_one_table;
 
--- CREATE VIEW summ_one_table AS SELECT tables as tables, SUM(cost) as total,  name as name , CURRENT_TIME as times 
+-- CREATE VIEW summ_one_table AS SELECT tables as tables, SUM(cost) as total,  name as name , CURRENT_TIMESTAMP as times 
 -- FROM show_orders GROUP BY tables;
 
 -- DROP TABLE full_history;

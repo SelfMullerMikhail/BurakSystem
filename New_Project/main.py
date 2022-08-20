@@ -10,13 +10,13 @@ from main_window.menegment.menegment import menegment
 from main_window.clear_table import Clear_table
 from main_window.pay_folder.pay_window import Pay_botton
 from main_window.frame_menu import Frame_menu
-from main_window.decorate_folder.decorate import Decorate_main_window  
+from main_window.decorate_folder.decorate import Decorate_main_window 
+from main_window.main_window_widgets.today_story import Today_story
 
 class Window():
     def __init__(self):
         window = tk.Tk()
         window.geometry("1100x700")
-
         self.text = Text()
         self.summ = Summ()
         self.frame_menu = Frame_menu(self.text, self.summ, window)
@@ -25,6 +25,7 @@ class Window():
         self.clear_table = Clear_table(self.text, self.summ)
         self.pay_botton = Pay_botton(self.text, self.summ, window)
         self.decorate = Decorate_main_window(window)
+        self.today_story_botton = Today_story(window, "today_story")
         
 
 

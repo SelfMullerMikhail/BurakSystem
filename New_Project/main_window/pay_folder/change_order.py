@@ -43,7 +43,7 @@ class Change_order():
         #     FROM deposid, show_orders
         #     WHERE show_orders.tables = {self.tab} AND deposid.tables = {self.tab}""")
         self.helper.execute_query_insert(f"""INSERT INTO full_history (tables, menu_name, price, datetimes) 
-            SELECT tables AS tables, name AS menu_name, cost AS price,  CURRENT_TIME AS datetimes
+            SELECT tables AS tables, name AS menu_name, cost AS price,  CURRENT_TIMESTAMP AS datetimes
             FROM show_orders
             WHERE show_orders.tables = {self.tab}""")
 
