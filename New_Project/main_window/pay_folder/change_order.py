@@ -19,6 +19,7 @@ class Change_order():
         self.total_money = self.cash_money + self.card_money
         if self.total_money >= self.summ_money_get:
             self.change_money = self.cash_money - (self.summ_money_get - self.card_money)
+            self.cash_money_for_transaction = self.cash_money - self.change_money
             self.deposid()
             if self.change_money >= 0:
                 self.entery.insert(0, self.change_money)
@@ -31,7 +32,7 @@ class Change_order():
 
     def deposid(self):
         self.tab = switcher.got_tab()
-        self.helper.execute_query_insert(f"INSERT INTO count_money (tables, cash_money, card_money)VALUES ({self.tab}, {self.summ_money_get}, {self.card_money})")
+        self.helper.execute_query_insert(f"INSERT INTO count_money (tables, cash_money, card_money)VALUES ({self.tab}, {self.cash_money_for_transaction}, {self.card_money})")
         
         self.helper.execute_query_insert(f"""INSERT INTO deposid (tables, cash_money, card_money, total, times) 
             SELECT count_money.tables, cash_money, card_money, total, times  
