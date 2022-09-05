@@ -64,3 +64,17 @@
 --     cash_money BEGIN,
 --     card_money BEGIN
 -- );
+-- CREATE TABLE massa(
+--     id BEGIN(20),
+--     massa BEGIN(20)
+-- );
+-- INSERT INTO massa VALUES (1, "kg"), (2, "gr"), (3, "litre"), (4, "ml");
+-- DROP table massa;
+
+-- DROP TABLE warehouse;
+
+-- CREATE TABLE warehouse(
+--     name_ingr VARCHAR(50),
+--     total BIGINT(50),
+--     id_massa BIGINT(20)
+-- );
