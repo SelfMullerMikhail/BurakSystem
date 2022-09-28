@@ -13,12 +13,13 @@ class Frame_menu():
     def buttons_create(self, name, x , y):
         def button_function():
             self.tab = switcher.got_tab()
-            self.helper.execute_query_insert(f"INSERT INTO orders (id_sell_table, name_menu, counts) VALUES ({self.tab}, '{name[0]}', 1)")
-            self.text_drinks.delete()
-            self.text_drinks.insert(self.tab)
-            self.summ_drinks.delete()
-            self.summ_drinks.insert(self.tab)
-            print(f"Drinks is work! tab: {self.tab}")
+            if self.tab != "all":
+                self.helper.execute_query_insert(f"INSERT INTO orders (id_sell_table, name_menu, counts) VALUES ({self.tab}, '{name[0]}', 1)")
+                self.text_drinks.delete()
+                self.text_drinks.insert(self.tab)
+                self.summ_drinks.delete()
+                self.summ_drinks.insert(self.tab)
+                print(f"Drinks is work! tab: {self.tab}")
 
         self.i = tk.Button(self.frame, text=name, command=button_function, width=15, height=3, relief= tk.RAISED, borderwidth = 2)
         self.i.place(x = x, y = y)
@@ -27,7 +28,7 @@ class Frame_menu():
         self.max_line_all = self.helper.execute_query_fetchall("SELECT name FROM menu")
         self.y = -55
         self.counter = 0
-        for i in self.max_line_all:
+        for i in range(len(self.max_line_all)//3):
             self.x = 10
             self.y += 60
             for b in range(4):

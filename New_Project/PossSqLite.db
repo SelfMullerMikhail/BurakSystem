@@ -1,0 +1,80 @@
+-- -- Создаем меню
+-- CREATE TABLE menu(
+-- id SERIAL PRIMARY KEY,
+-- name VARCHAR(100),
+-- cost BIGINT,
+-- UNIQUE (name)
+-- );
+
+
+-- Создаем стол заказов.
+-- DROP TABLE IF EXISTS sell_table;
+-- CREATE TABLE sell_table(
+-- id SERIAL PRIMARY KEY
+-- );
+-- INSERT into sell_table VALUES (7);
+
+-- Создаем таблицу наполнения стола заказов.
+
+-- drop table if EXISTS orders;
+
+-- CREATE TABLE orders(
+-- id SERIAL PRIMARY KEY,
+-- id_sell_table BIGINT UNSIGNED,
+-- name_menu VARCHAR(50),
+-- id_menu BIGINT UNSIGNED,
+-- counts BIGINT NOT NULL
+-- );
+
+-- DROP TABLE deposid;
+
+-- CREATE TABLE deposid(
+-- tables BIGINT,
+-- cash_money BEGIN,
+-- card_money BEGIN,
+-- total BIGINT,
+-- times DATETIME
+-- );
+
+-- drop view show_orders;
+
+-- CREATE VIEW show_orders AS SELECT cost, menu.name, id_sell_table as tables
+-- FROM menu, orders, sell_table 
+-- WHERE sell_table.id = orders.id_sell_table 
+-- AND orders.name_menu = menu.name AND menu.name = orders.name_menu; 
+
+-- DROP VIEW summ_one_table;
+
+-- CREATE VIEW summ_one_table AS SELECT tables as tables, SUM(cost) as total,  name as name , CURRENT_TIMESTAMP as times 
+-- FROM show_orders GROUP BY tables;
+
+-- DROP TABLE full_history;
+
+-- CREATE TABLE full_history(
+--     tables BEGIN(50),
+--     menu_name VARCHAR(50),
+--     price BEGIN(50),
+--     datetimes DATETIME
+-- );
+
+-- DROP TABLE count_money;
+
+-- CREATE TABLE count_money(
+--     tables BEGIN,
+--     cash_money BEGIN,
+--     card_money BEGIN
+-- );
+-- CREATE TABLE massa(
+--     id BEGIN(20),
+--     massa BEGIN(20)
+-- );
+-- INSERT INTO massa VALUES (1, "kg"), (2, "gr"), (3, "litre"), (4, "ml");
+-- DROP table massa;
+
+-- DROP TABLE warehouse;
+
+-- CREATE TABLE warehouse(
+--     name_ingr VARCHAR(50),
+--     total BIGINT(50),
+--     id_massa BIGINT(20)
+-- );

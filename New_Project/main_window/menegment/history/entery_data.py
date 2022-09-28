@@ -18,14 +18,12 @@ class Entery_data():
         self.history_text.delete()
         if self.data_from == self.dd_mm_yyyy and self.data_to == self.dd_mm_yyyy:
             self.history = self.helper.execute_query_fetchall("SELECT * FROM deposid")
-            print("SELECT * FROM deposid")
             for row in self.history:
-                self.history_text.insert(f"tab: {row[0]} TL: {row[1]} data: {row[2]}\n")
+                self.history_text.insert(f"{row[4]} tab:{row[0]}\ncash: {row[1]} card: {row[2]} sum: {row[3]}\n\n")
         else:
             self.history = self.helper.execute_query_fetchall(f'SELECT * FROM deposid WHERE DATE(times) >= "{self.data_from}" AND DATE(times) <= "{self.data_to}"')
-            print('SELECT * FROM deposid WHERE DATE(times) >= "{self.data_from}" AND DATE(times) <= "{self.data_to}"')
             for row in self.history:
-                self.history_text.insert(f"tab: {row[0]} TL: {row[1]} data: {row[2]}\n")
+                self.history_text.insert(f"{row[4]} tab:{row[0]}\ncash: {row[1]} card: {row[2]} sum: {row[3]}\n\n")
     def botton_show_func(self):
         self.botton_show = tk.Button(self.history_window, text="Show history", width=15, height=3,
                                      command=self.show_history)
