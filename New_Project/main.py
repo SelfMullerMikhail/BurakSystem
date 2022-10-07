@@ -1,8 +1,7 @@
-from platform import python_branch
-from main_window import *
-# pip install mysql-connector-python_branch
-
+from cgitb import text
 import tkinter as tk
+from tkinter import ttk
+from tkinter import font
 from main_window.text import Text
 from main_window.summ import Summ
 from main_window.table import Table
@@ -12,24 +11,28 @@ from main_window.pay_folder.pay_window import Pay_botton
 from main_window.frame_menu import Frame_menu
 from main_window.decorate_folder.decorate import Decorate_main_window 
 from main_window.main_window_widgets.today_story import Today_story
+from main_window.main_window_widgets.upPanelFrame import UpPanel_Frame, Cats_fone
 
-class Window():
+class Window(tk.Tk):
     def __init__(self):
-        window = tk.Tk()
-        window.geometry("1100x700")
+        super().__init__()
+        self.geometry("1100x700")
+        self.cats_fone = Cats_fone(self)
         self.text = Text()
         self.summ = Summ()
-        self.frame_menu = Frame_menu(self.text, self.summ, window)
-        self.menegment = menegment(window)
+        self.frame_menu = Frame_menu(self.text, self.summ, self)
+        self.menegment = menegment(self)
         self.table = Table(self.text, self.summ)
         self.clear_table = Clear_table(self.text, self.summ)
-        self.pay_botton = Pay_botton(self.text, self.summ, window)
-        self.decorate = Decorate_main_window(window)
-        self.today_story_botton = Today_story(window, "today_story")
+        self.pay_botton = Pay_botton(self.text, self.summ, self)
+        self.decorate = Decorate_main_window(self, "Test Version 1.4")
+        self.today_story_botton = Today_story(self, "today_story")
+        # self.upPanel_frame = UpPanel_Frame(self)
+        
         
 
 
-        window.mainloop()
-
 if __name__ == "__main__":
-    Window()
+    app = Window()
+    app.mainloop()
+
