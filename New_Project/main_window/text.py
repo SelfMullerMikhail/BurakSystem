@@ -4,7 +4,7 @@ import tkinter as tk
 from main_window.db_helper import Db_helper
 
 class Text():
-    helper = Db_helper()
+    
     def delete(self):
         self.text.delete("1.0", tk.END)
 
@@ -38,6 +38,7 @@ class Text():
         self.text.place(x=130, y=30)
 
     def __init__(self):
+        self.helper = Db_helper()
         self.numb_me = 0
         self.create_text()
 

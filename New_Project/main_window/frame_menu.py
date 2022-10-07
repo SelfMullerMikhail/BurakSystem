@@ -1,11 +1,17 @@
 import tkinter as tk
+from click import style
 from main_window.db_helper import Db_helper
 from main_window.switcher import switcher
+from tkinter import ttk
+from main_window.photosHelper import PhotoHelper
 
 class Frame_menu():
     def create(self):
-        self.frame = tk.Frame(self.main_window, width=530, height=350, relief= tk.RAISED, borderwidth = 2)
-        self.frame.place(x=550, y=10)
+        self.frame = ttk.Frame(self.main_window, width=540, height=700, relief= tk.RAISED)
+        self.frame.place(x=570, y=10)
+        self.backgroundphoto = PhotoHelper("main_window/catPhoto3.jpg")
+        self.backgroundLabel = ttk.Label(self.frame, image=self.backgroundphoto)
+        self.backgroundLabel.place(x = 1, y = 1)
 
     def delete(self):
         self.frame.destroy()
