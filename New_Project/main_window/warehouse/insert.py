@@ -5,7 +5,7 @@ from main_window.db_helper import Db_helper
 class Create_botton_insert():
     def insert(self):
         self.text_info = self.text.get()
-        self.helper.execute_query_insert(f"INSERT INTO warehouse (name_ingr, total, id_massa) VALUES ('{self.text_info}', 1, 2);")
+        self.helper.execute_query_insert(f"INSERT INTO warehouse (name_ingr, total, id_massa) VALUES ('{self.text_info}', 1000, 'gr');")
         self.info_window.clear()
         self.info_window.insert()
         

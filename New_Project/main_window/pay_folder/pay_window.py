@@ -5,6 +5,7 @@ from main_window.pay_folder.cash_money import Cash_money
 from main_window.pay_folder.change_order import Change_order
 from main_window.pay_folder.card_money import Card_money
 from main_window.table import switcher
+from tkinter import ttk
 
 from widgets.exit_botton import Exit_botton
 
@@ -16,9 +17,9 @@ class Pay_botton():
         if self.yes_no != None and self.table != "all":
             self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
 
-    def __init__(self, main_text, main_summ, main_window):
-        self.main_window = main_window
-        self.pay = tk.Button(text="Pay", width=15, height=3, command=self.pay_window)
+    def __init__(self, main_text, main_summ, tables_from):
+        self.tables_from = tables_from
+        self.pay = ttk.Button(self.tables_from, text="Pay", width=15, command=self.pay_window, style="myButton.TButton")
         self.pay.place(x=250, y=410)
         self.main_text = main_text
         self.main_summ = main_summ

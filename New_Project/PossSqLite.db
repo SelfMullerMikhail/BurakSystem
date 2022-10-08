@@ -76,5 +76,5 @@
 -- CREATE TABLE warehouse(
 --     name_ingr VARCHAR(50),
 --     total BIGINT(50),
---     id_massa BIGINT(20)
+--     id_massa VARCHAR(20)
 -- );

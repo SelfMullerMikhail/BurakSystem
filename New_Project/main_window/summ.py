@@ -1,5 +1,6 @@
 import tkinter as tk
 from main_window.db_helper import Db_helper
+from tkinter import ttk
 
 
 class Summ():
@@ -26,10 +27,11 @@ class Summ():
             print("Error Summ.get_money. self.summ_bd")
 
     def summ_create(self):
-        self.summ = tk.Entry()
+        self.summ = tk.Entry(self.tables_from)
         self.summ.place(x=370, y=395)
 
 
 
-    def __init__(self):
+    def __init__(self, tables_from):
+        self.tables_from = tables_from
         self.summ_create()
