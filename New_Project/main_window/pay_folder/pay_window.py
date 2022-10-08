@@ -17,9 +17,9 @@ class Pay_botton():
         if self.yes_no != None and self.table != "all":
             self.window = Pay_window(self.main_text, self.main_summ, self.main_window)
 
-    def __init__(self, main_text, main_summ, main_window):
-        self.main_window = main_window
-        self.pay = ttk.Button(text="Pay", width=15, command=self.pay_window, style="myButton.TButton")
+    def __init__(self, main_text, main_summ, tables_from):
+        self.tables_from = tables_from
+        self.pay = ttk.Button(self.tables_from, text="Pay", width=15, command=self.pay_window, style="myButton.TButton")
         self.pay.place(x=250, y=410)
         self.main_text = main_text
         self.main_summ = main_summ

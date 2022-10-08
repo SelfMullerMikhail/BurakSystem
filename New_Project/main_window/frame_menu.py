@@ -8,8 +8,8 @@ from main_window.photosHelper import PhotoHelper
 class Frame_menu():
     def create(self):
         self.frame = ttk.Frame(self.main_window, width=540, height=700, relief= tk.RAISED)
-        self.frame.place(x=570, y=10)
-        self.backgroundphoto = PhotoHelper("main_window/catPhoto3.jpg")
+        self.frame.place(x=570, y=52)
+        self.backgroundphoto = PhotoHelper("img/catPhoto3.jpg")
         self.backgroundLabel = ttk.Label(self.frame, image=self.backgroundphoto)
         self.backgroundLabel.place(x = 1, y = 1)
 

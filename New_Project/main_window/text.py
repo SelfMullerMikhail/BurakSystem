@@ -31,13 +31,13 @@ class Text():
                 self.numb_me = i[0]
                 self.text.insert("1.0", f'Table: {i[0]}\n\n')
                 self.text.insert("1.0", self.info)
-              
 
     def create_text(self):
-        self.text = tk.Text(width=45)
+        self.text = tk.Text(self.tables_from, width=45)
         self.text.place(x=130, y=30)
 
-    def __init__(self):
+    def __init__(self, tables_from):
+        self.tables_from = tables_from
         self.helper = Db_helper()
         self.numb_me = 0
         self.create_text()
